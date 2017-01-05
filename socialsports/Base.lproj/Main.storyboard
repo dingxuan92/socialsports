@@ -20,11 +20,115 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8-s5quubtym-abigail-keenan" translatesAutoresizingMaskIntoConstraints="NO" id="469-l1-FNd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App intro" translatesAutoresizingMaskIntoConstraints="NO" id="yLA-hw-BZ3">
+                                <rect key="frame" x="47" y="129" width="280" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="f6x-g1-LBS"/>
+                                    <constraint firstAttribute="height" constant="210" id="q4h-DJ-5Tt"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qv-RQ-PPz">
+                                <rect key="frame" x="52" y="394" width="270" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="O8H-NM-RbP"/>
+                                    <constraint firstAttribute="width" constant="270" id="VaV-DS-EJ2"/>
+                                </constraints>
+                                <state key="normal" image="Facebook sign in"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Or divider" translatesAutoresizingMaskIntoConstraints="NO" id="vqI-jw-u1x">
+                                <rect key="frame" x="52" y="463" width="270" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="11" id="hRf-Uh-Prw"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMx-7B-noH">
+                                <rect key="frame" x="52" y="494" width="274" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="TEC-4I-P0e"/>
+                                </constraints>
+                                <state key="normal" image="Email Sign in"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vqI-jw-u1x" firstAttribute="leading" secondItem="8qv-RQ-PPz" secondAttribute="leading" id="00o-Ta-X8f"/>
+                            <constraint firstItem="469-l1-FNd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6ab-Lh-65G"/>
+                            <constraint firstItem="469-l1-FNd" firstAttribute="top" secondItem="yLA-hw-BZ3" secondAttribute="bottom" constant="-339" id="9Co-90-Wsh"/>
+                            <constraint firstItem="8qv-RQ-PPz" firstAttribute="centerX" secondItem="yLA-hw-BZ3" secondAttribute="centerX" id="DTT-Re-JjS"/>
+                            <constraint firstAttribute="trailing" secondItem="469-l1-FNd" secondAttribute="trailing" id="KJk-qX-Q6V"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="469-l1-FNd" secondAttribute="bottom" id="NRh-u5-CSE"/>
+                            <constraint firstItem="vqI-jw-u1x" firstAttribute="top" secondItem="8qv-RQ-PPz" secondAttribute="bottom" constant="20" id="Zcz-5o-tgK"/>
+                            <constraint firstItem="469-l1-FNd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ctZ-p1-uIp"/>
+                            <constraint firstItem="RMx-7B-noH" firstAttribute="trailing" secondItem="vqI-jw-u1x" secondAttribute="trailing" constant="4" id="j5O-t6-gjP"/>
+                            <constraint firstItem="vqI-jw-u1x" firstAttribute="trailing" secondItem="8qv-RQ-PPz" secondAttribute="trailing" id="mt0-1d-hJu"/>
+                            <constraint firstItem="yLA-hw-BZ3" firstAttribute="centerX" secondItem="469-l1-FNd" secondAttribute="centerX" id="py6-dv-3vh"/>
+                            <constraint firstItem="8qv-RQ-PPz" firstAttribute="top" secondItem="yLA-hw-BZ3" secondAttribute="bottom" constant="55" id="w8Z-Pl-wy6"/>
+                            <constraint firstItem="RMx-7B-noH" firstAttribute="leading" secondItem="vqI-jw-u1x" secondAttribute="leading" id="x6T-bp-MqM"/>
+                            <constraint firstItem="RMx-7B-noH" firstAttribute="top" secondItem="vqI-jw-u1x" secondAttribute="bottom" constant="20" id="y4P-5Z-Ig7"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31.199999999999999" y="56.221889055472268"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bqR-IL-Nhl">
+            <objects>
+                <viewController id="y6c-28-pYi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kUj-EX-64c"/>
+                        <viewControllerLayoutGuide type="bottom" id="jM8-5l-Zyh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wnx-nV-jF6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiN-FX-Uud">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fVt-4p-pxC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHo-6d-UAd">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FyL-qF-uCI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ane-5p-zeN">
+                                <rect key="frame" x="0.0" y="48" width="375" height="569"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.15686274509803921" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QHo-6d-UAd" firstAttribute="leading" secondItem="Wnx-nV-jF6" secondAttribute="leading" id="4qO-V1-VGb"/>
+                            <constraint firstAttribute="trailing" secondItem="QHo-6d-UAd" secondAttribute="trailing" id="8L9-pD-kL3"/>
+                            <constraint firstItem="jM8-5l-Zyh" firstAttribute="top" secondItem="QHo-6d-UAd" secondAttribute="bottom" id="QsE-vA-IVB"/>
+                            <constraint firstItem="jiN-FX-Uud" firstAttribute="leading" secondItem="Wnx-nV-jF6" secondAttribute="leading" id="Rfb-MD-WSp"/>
+                            <constraint firstAttribute="trailing" secondItem="jiN-FX-Uud" secondAttribute="trailing" id="Zg3-WJ-V52"/>
+                            <constraint firstItem="jiN-FX-Uud" firstAttribute="top" secondItem="Wnx-nV-jF6" secondAttribute="top" id="brU-0f-ypO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yn6-Nl-RJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.60000000000002" y="55.322338830584712"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="8-s5quubtym-abigail-keenan" width="375" height="667"/>
+        <image name="App intro" width="267" height="202"/>
+        <image name="Email Sign in" width="278" height="57"/>
+        <image name="Facebook sign in" width="270" height="49"/>
+        <image name="Or divider" width="270" height="13"/>
+    </resources>
 </document>
