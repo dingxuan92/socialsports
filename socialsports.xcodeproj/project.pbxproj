@@ -13,6 +13,8 @@
 		04CAB34E1E1E7C110005C088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CAB34D1E1E7C110005C088 /* Assets.xcassets */; };
 		04CAB3511E1E7C110005C088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CAB34F1E1E7C110005C088 /* LaunchScreen.storyboard */; };
 		04CAB3591E1E7CD80005C088 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04CAB3581E1E7CD80005C088 /* GoogleService-Info.plist */; };
+		04CAB3601E1EACA70005C088 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAB35F1E1EACA70005C088 /* Constants.swift */; };
+		04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAB3611E1EAE800005C088 /* CoolBtn.swift */; };
 		6EC765B51546F3E7EDD00520 /* Pods_socialsports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D65D1A7D3B7ED553EF0495 /* Pods_socialsports.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		04CAB3501E1E7C110005C088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CAB3521E1E7C110005C088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04CAB3581E1E7CD80005C088 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04CAB35F1E1EACA70005C088 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04CAB3611E1EAE800005C088 /* CoolBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolBtn.swift; sourceTree = "<group>"; };
 		05BE0481D2183C172A38DE46 /* Pods-socialsports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialsports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socialsports/Pods-socialsports.debug.xcconfig"; sourceTree = "<group>"; };
 		43D65D1A7D3B7ED553EF0495 /* Pods_socialsports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialsports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EE56E74BE5BA011E029B3C /* Pods-socialsports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialsports.release.xcconfig"; path = "Pods/Target Support Files/Pods-socialsports/Pods-socialsports.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		04CAB3451E1E7C110005C088 /* socialsports */ = {
 			isa = PBXGroup;
 			children = (
+				04CAB35E1E1EAC770005C088 /* Utility */,
 				04CAB35A1E1E83BA0005C088 /* Model */,
 				04CAB35C1E1E83C60005C088 /* View */,
 				04CAB35B1E1E83C10005C088 /* Controller */,
@@ -94,8 +99,17 @@
 		04CAB35C1E1E83C60005C088 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04CAB3611E1EAE800005C088 /* CoolBtn.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		04CAB35E1E1EAC770005C088 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				04CAB35F1E1EACA70005C088 /* Constants.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		09E4914559E34A7F2AD6E5E7 /* Frameworks */ = {
@@ -241,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CAB3491E1E7C110005C088 /* SignInVC.swift in Sources */,
+				04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */,
 				04CAB3471E1E7C110005C088 /* AppDelegate.swift in Sources */,
+				04CAB3601E1EACA70005C088 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

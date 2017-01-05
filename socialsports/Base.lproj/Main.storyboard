@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="210" id="q4h-DJ-5Tt"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qv-RQ-PPz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qv-RQ-PPz" customClass="CoolBtn" customModule="socialsports" customModuleProvider="target">
                                 <rect key="frame" x="52" y="394" width="270" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="O8H-NM-RbP"/>
@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="11" id="hRf-Uh-Prw"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMx-7B-noH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMx-7B-noH" customClass="CoolBtn" customModule="socialsports" customModuleProvider="target">
                                 <rect key="frame" x="52" y="494" width="274" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="TEC-4I-P0e"/>
