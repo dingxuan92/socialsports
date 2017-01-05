@@ -38,6 +38,9 @@
                                     <constraint firstAttribute="width" constant="270" id="VaV-DS-EJ2"/>
                                 </constraints>
                                 <state key="normal" image="Facebook sign in"/>
+                                <connections>
+                                    <action selector="facebookBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYH-c1-mai"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Or divider" translatesAutoresizingMaskIntoConstraints="NO" id="vqI-jw-u1x">
                                 <rect key="frame" x="52" y="463" width="270" height="11"/>
