@@ -39,7 +39,7 @@
                                 </constraints>
                                 <state key="normal" image="Facebook sign in"/>
                                 <connections>
-                                    <action selector="facebookBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYH-c1-mai"/>
+                                    <action selector="fbButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sv1-UJ-9zr"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Or divider" translatesAutoresizingMaskIntoConstraints="NO" id="vqI-jw-u1x">
@@ -74,15 +74,18 @@
                             <constraint firstItem="RMx-7B-noH" firstAttribute="top" secondItem="vqI-jw-u1x" secondAttribute="bottom" constant="20" id="y4P-5Z-Ig7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="y6c-28-pYi" kind="show" identifier="goToFeed" id="Vhd-J4-4hM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31.199999999999999" y="56.221889055472268"/>
         </scene>
-        <!--View Controller-->
+        <!--FeedVC-->
         <scene sceneID="bqR-IL-Nhl">
             <objects>
-                <viewController id="y6c-28-pYi" sceneMemberID="viewController">
+                <viewController id="y6c-28-pYi" customClass="FeedVC" customModule="socialsports" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kUj-EX-64c"/>
                         <viewControllerLayoutGuide type="bottom" id="jM8-5l-Zyh"/>
@@ -105,9 +108,8 @@
                                     <constraint firstAttribute="height" constant="50" id="FyL-qF-uCI"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ane-5p-zeN">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ane-5p-zeN">
                                 <rect key="frame" x="0.0" y="48" width="375" height="569"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.15686274509803921" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -115,10 +117,14 @@
                         <constraints>
                             <constraint firstItem="QHo-6d-UAd" firstAttribute="leading" secondItem="Wnx-nV-jF6" secondAttribute="leading" id="4qO-V1-VGb"/>
                             <constraint firstAttribute="trailing" secondItem="QHo-6d-UAd" secondAttribute="trailing" id="8L9-pD-kL3"/>
+                            <constraint firstAttribute="trailing" secondItem="ane-5p-zeN" secondAttribute="trailing" id="9d2-zD-bCT"/>
                             <constraint firstItem="jM8-5l-Zyh" firstAttribute="top" secondItem="QHo-6d-UAd" secondAttribute="bottom" id="QsE-vA-IVB"/>
                             <constraint firstItem="jiN-FX-Uud" firstAttribute="leading" secondItem="Wnx-nV-jF6" secondAttribute="leading" id="Rfb-MD-WSp"/>
                             <constraint firstAttribute="trailing" secondItem="jiN-FX-Uud" secondAttribute="trailing" id="Zg3-WJ-V52"/>
                             <constraint firstItem="jiN-FX-Uud" firstAttribute="top" secondItem="Wnx-nV-jF6" secondAttribute="top" id="brU-0f-ypO"/>
+                            <constraint firstItem="ane-5p-zeN" firstAttribute="top" secondItem="kUj-EX-64c" secondAttribute="bottom" constant="28" id="jjs-g5-Oaw"/>
+                            <constraint firstItem="QHo-6d-UAd" firstAttribute="top" secondItem="ane-5p-zeN" secondAttribute="bottom" id="rtr-3k-WiG"/>
+                            <constraint firstItem="ane-5p-zeN" firstAttribute="leading" secondItem="Wnx-nV-jF6" secondAttribute="leading" id="ttt-uk-gNa"/>
                         </constraints>
                     </view>
                 </viewController>

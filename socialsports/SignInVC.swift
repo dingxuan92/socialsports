@@ -12,18 +12,17 @@ import FBSDKCoreKit
 import Firebase
 
 class SignInVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func facebookBtnTapped(_ sender: AnyObject) {
+    
+    @IBAction func fbButtonPressed(_ sender: Any) {
         
         let facebookLogin = FBSDKLoginManager()
         
@@ -47,6 +46,9 @@ class SignInVC: UIViewController {
         
     }
     
+    
+    
+    
     func firebaseAuth(_ credential: FIRAuthCredential) {
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
@@ -59,6 +61,6 @@ class SignInVC: UIViewController {
         })
         
     }
-
+    
 }
 
