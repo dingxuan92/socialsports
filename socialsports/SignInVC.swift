@@ -10,19 +10,18 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func fbButtonPressed(_ sender: Any) {
+    @IBAction private func fbButtonPressed(_ sender: Any) {
         
         let facebookLogin = FBSDKLoginManager()
         
@@ -49,7 +48,7 @@ class SignInVC: UIViewController {
     
     
     
-    func firebaseAuth(_ credential: FIRAuthCredential) {
+    private func firebaseAuth(_ credential: FIRAuthCredential) {
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if error != nil {
@@ -57,10 +56,21 @@ class SignInVC: UIViewController {
                 print("Ding: Unable to authenticate with Firebase - \(error)")
             } else {
                 print("Ding: Successfully authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
         
     }
     
+    private func completeSignIn(id: String) {
+        let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Ding: Data saved to keychain \(keyChainResult)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
+    }
+    
 }
+
+
 

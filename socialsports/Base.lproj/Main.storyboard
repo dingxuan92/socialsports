@@ -110,7 +110,22 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ane-5p-zeN">
                                 <rect key="frame" x="0.0" y="48" width="375" height="569"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khs-rc-tcA">
+                                        <rect key="frame" x="157" y="269" width="60" height="30"/>
+                                        <state key="normal" title="Sign Out">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signOutBtnPressed:" destination="y6c-28-pYi" eventType="touchUpInside" id="LZw-kG-BVY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.15686274509803921" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Khs-rc-tcA" firstAttribute="centerY" secondItem="ane-5p-zeN" secondAttribute="centerY" id="6nH-hu-y2d"/>
+                                    <constraint firstItem="Khs-rc-tcA" firstAttribute="centerX" secondItem="ane-5p-zeN" secondAttribute="centerX" id="oml-Vx-jsB"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,6 +142,9 @@
                             <constraint firstItem="ane-5p-zeN" firstAttribute="leading" secondItem="Wnx-nV-jF6" secondAttribute="leading" id="ttt-uk-gNa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="7OR-bc-SqD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yn6-Nl-RJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
