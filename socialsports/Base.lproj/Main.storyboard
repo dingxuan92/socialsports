@@ -32,9 +32,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qv-RQ-PPz" customClass="CoolBtn" customModule="socialsports" customModuleProvider="target">
-                                <rect key="frame" x="52" y="394" width="270" height="49"/>
+                                <rect key="frame" x="52" y="394" width="270" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="O8H-NM-RbP"/>
+                                    <constraint firstAttribute="height" constant="50" id="O8H-NM-RbP"/>
                                     <constraint firstAttribute="width" constant="270" id="VaV-DS-EJ2"/>
                                 </constraints>
                                 <state key="normal" image="Facebook sign in"/>
@@ -43,35 +43,38 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Or divider" translatesAutoresizingMaskIntoConstraints="NO" id="vqI-jw-u1x">
-                                <rect key="frame" x="52" y="463" width="270" height="11"/>
+                                <rect key="frame" x="52" y="464" width="270" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="hRf-Uh-Prw"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMx-7B-noH" customClass="CoolBtn" customModule="socialsports" customModuleProvider="target">
-                                <rect key="frame" x="52" y="494" width="274" height="57"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86p-dV-1aY">
+                                <rect key="frame" x="52" y="495" width="275" height="57"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="TEC-4I-P0e"/>
+                                    <constraint firstAttribute="height" constant="57" id="ol5-a0-Qx5"/>
                                 </constraints>
                                 <state key="normal" image="Email Sign in"/>
+                                <connections>
+                                    <action selector="googleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7TF-7n-Sqx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vqI-jw-u1x" firstAttribute="leading" secondItem="8qv-RQ-PPz" secondAttribute="leading" id="00o-Ta-X8f"/>
                             <constraint firstItem="469-l1-FNd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6ab-Lh-65G"/>
+                            <constraint firstItem="86p-dV-1aY" firstAttribute="trailing" secondItem="vqI-jw-u1x" secondAttribute="trailing" constant="5" id="8IR-gZ-Cr4"/>
                             <constraint firstItem="469-l1-FNd" firstAttribute="top" secondItem="yLA-hw-BZ3" secondAttribute="bottom" constant="-339" id="9Co-90-Wsh"/>
+                            <constraint firstItem="86p-dV-1aY" firstAttribute="top" secondItem="vqI-jw-u1x" secondAttribute="bottom" constant="20" id="9ew-4k-8nd"/>
                             <constraint firstItem="8qv-RQ-PPz" firstAttribute="centerX" secondItem="yLA-hw-BZ3" secondAttribute="centerX" id="DTT-Re-JjS"/>
                             <constraint firstAttribute="trailing" secondItem="469-l1-FNd" secondAttribute="trailing" id="KJk-qX-Q6V"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="469-l1-FNd" secondAttribute="bottom" id="NRh-u5-CSE"/>
+                            <constraint firstItem="86p-dV-1aY" firstAttribute="leading" secondItem="vqI-jw-u1x" secondAttribute="leading" id="Nin-Wj-HtO"/>
                             <constraint firstItem="vqI-jw-u1x" firstAttribute="top" secondItem="8qv-RQ-PPz" secondAttribute="bottom" constant="20" id="Zcz-5o-tgK"/>
                             <constraint firstItem="469-l1-FNd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ctZ-p1-uIp"/>
-                            <constraint firstItem="RMx-7B-noH" firstAttribute="trailing" secondItem="vqI-jw-u1x" secondAttribute="trailing" constant="4" id="j5O-t6-gjP"/>
                             <constraint firstItem="vqI-jw-u1x" firstAttribute="trailing" secondItem="8qv-RQ-PPz" secondAttribute="trailing" id="mt0-1d-hJu"/>
                             <constraint firstItem="yLA-hw-BZ3" firstAttribute="centerX" secondItem="469-l1-FNd" secondAttribute="centerX" id="py6-dv-3vh"/>
                             <constraint firstItem="8qv-RQ-PPz" firstAttribute="top" secondItem="yLA-hw-BZ3" secondAttribute="bottom" constant="55" id="w8Z-Pl-wy6"/>
-                            <constraint firstItem="RMx-7B-noH" firstAttribute="leading" secondItem="vqI-jw-u1x" secondAttribute="leading" id="x6T-bp-MqM"/>
-                            <constraint firstItem="RMx-7B-noH" firstAttribute="top" secondItem="vqI-jw-u1x" secondAttribute="bottom" constant="20" id="y4P-5Z-Ig7"/>
                         </constraints>
                     </view>
                     <connections>
