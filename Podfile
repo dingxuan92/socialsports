@@ -10,8 +10,8 @@ target 'socialsports' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
+  pod 'FBSDKCoreKit', "~> 4.17.0”;
+  pod 'FBSDKLoginKit', "~> 4.17.0”;
   pod 'SwiftKeychainWrapper'
   pod 'GoogleSignIn'
   

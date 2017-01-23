@@ -19,7 +19,7 @@ class FeedVC: UIViewController {
         let keyResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("Ding: \(keyResult)")
         try! FIRAuth.auth()?.signOut()
-        performSegue(withIdentifier: "goToSignIn", sender: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 

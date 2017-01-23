@@ -99,8 +99,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiN-FX-Uud">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dxprofilepic" translatesAutoresizingMaskIntoConstraints="NO" id="EDN-an-vK7" customClass="CircleView" customModule="socialsports" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="0.0" width="40" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Uw0-hE-tpF"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="EDN-an-vK7" firstAttribute="leading" secondItem="jiN-FX-Uud" secondAttribute="leading" constant="8" id="BLb-5T-p5F"/>
+                                    <constraint firstItem="EDN-an-vK7" firstAttribute="top" secondItem="jiN-FX-Uud" secondAttribute="top" id="IoH-kd-aZU"/>
+                                    <constraint firstAttribute="bottom" secondItem="EDN-an-vK7" secondAttribute="bottom" constant="5" id="V2M-ia-Hct"/>
                                     <constraint firstAttribute="height" constant="50" id="fVt-4p-pxC"/>
                                 </constraints>
                             </view>
@@ -145,13 +156,10 @@
                             <constraint firstItem="ane-5p-zeN" firstAttribute="leading" secondItem="Wnx-nV-jF6" secondAttribute="leading" id="ttt-uk-gNa"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="7OR-bc-SqD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yn6-Nl-RJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821.60000000000002" y="55.322338830584712"/>
+            <point key="canvasLocation" x="820.28985507246387" y="54.619565217391312"/>
         </scene>
     </scenes>
     <resources>
@@ -160,5 +168,6 @@
         <image name="Email Sign in" width="278" height="57"/>
         <image name="Facebook sign in" width="270" height="49"/>
         <image name="Or divider" width="270" height="13"/>
+        <image name="dxprofilepic" width="1305" height="1221"/>
     </resources>
 </document>

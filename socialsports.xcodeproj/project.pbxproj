@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		046204131E1F65960096BA70 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046204121E1F65960096BA70 /* FeedVC.swift */; };
+		0498694B1E35F744002CC562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694A1E35F744002CC562 /* CircleView.swift */; };
+		0498694D1E35F77B002CC562 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694C1E35F77B002CC562 /* FancyView.swift */; };
+		0498694F1E35F7AD002CC562 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694E1E35F7AD002CC562 /* FancyField.swift */; };
 		04CAB3471E1E7C110005C088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAB3461E1E7C110005C088 /* AppDelegate.swift */; };
 		04CAB3491E1E7C110005C088 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAB3481E1E7C110005C088 /* SignInVC.swift */; };
 		04CAB34C1E1E7C110005C088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CAB34A1E1E7C110005C088 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		0422099D1E1F614600D2BAF1 /* socialsports.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialsports.entitlements; sourceTree = "<group>"; };
 		046204121E1F65960096BA70 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		0498694A1E35F744002CC562 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		0498694C1E35F77B002CC562 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		0498694E1E35F7AD002CC562 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		04CAB3431E1E7C110005C088 /* socialsports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialsports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CAB3461E1E7C110005C088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04CAB3481E1E7C110005C088 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -105,6 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				04CAB3611E1EAE800005C088 /* CoolBtn.swift */,
+				0498694A1E35F744002CC562 /* CircleView.swift */,
+				0498694C1E35F77B002CC562 /* FancyView.swift */,
+				0498694E1E35F7AD002CC562 /* FancyField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -264,10 +273,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0498694F1E35F7AD002CC562 /* FancyField.swift in Sources */,
+				0498694B1E35F744002CC562 /* CircleView.swift in Sources */,
 				04CAB3491E1E7C110005C088 /* SignInVC.swift in Sources */,
 				04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */,
 				046204131E1F65960096BA70 /* FeedVC.swift in Sources */,
 				04CAB3471E1E7C110005C088 /* AppDelegate.swift in Sources */,
+				0498694D1E35F77B002CC562 /* FancyView.swift in Sources */,
 				04CAB3601E1EACA70005C088 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05BE0481D2183C172A38DE46 /* Pods-socialsports.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = socialsports/socialsports.entitlements;
 				DEVELOPMENT_TEAM = GG8QRBBGSL;
@@ -408,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 86EE56E74BE5BA011E029B3C /* Pods-socialsports.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = socialsports/socialsports.entitlements;
 				DEVELOPMENT_TEAM = GG8QRBBGSL;
