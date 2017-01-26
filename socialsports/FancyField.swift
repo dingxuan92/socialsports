@@ -10,6 +10,7 @@ import UIKit
 
 class FancyField: UITextField {
 
+    
     override func awakeFromNib() {
         layer.borderColor = UIColor(red: SHADOW_GRAY, green: SHADOW_GRAY, blue: SHADOW_GRAY, alpha: 0.2).cgColor
         layer.borderWidth = 1.0

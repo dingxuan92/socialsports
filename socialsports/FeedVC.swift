@@ -12,16 +12,36 @@ import FBSDKCoreKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UIViewController {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBAction func signOutBtnPressed(_ sender: UIButton) {
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let keyResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-        print("Ding: \(keyResult)")
-        try! FIRAuth.auth()?.signOut()
-        dismiss(animated: true, completion: nil)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "GameCell") as! GameCell
+    }
+    
+    @IBAction func profileButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToProfile", sender: nil)
+    }
 
 
 
