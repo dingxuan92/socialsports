@@ -25,7 +25,7 @@ class DataService {
         return _REF_BASE
     }
     
-    var REF_POSTS: FIRDatabaseReference {
+    var REF_GAMES: FIRDatabaseReference {
         return _REF_GAMES
     }
     
@@ -39,8 +39,8 @@ class DataService {
         return user
     }
     
-    func createFirebaseDBUser(uid: String, userData: Dictionary<String,String>) {
-        REF_USERS.child(uid).updateChildValues(userData)
+    func createFirebaseDBUser(uid: String, userData: Dictionary<String, AnyObject>) {
+        REF_USERS.child(uid).child("profile").updateChildValues(userData)
         //if uid dosn't exist in database, it will create a new one for the uid
     }
     

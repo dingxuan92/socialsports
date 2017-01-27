@@ -21,6 +21,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        DataService.ds.REF_GAMES.observe(.value, with: { (snapshop) in
+            print(snapshop)
+        })
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -65,12 +65,19 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
             } else {
                 print("Ding: Successfully authenticated with Firebase")
                 if let user = user {
-                    let name = user.displayName
-                    let profilePhotoURL = user.photoURL?.absoluteString
-                    let email = user.email
+                    var userData = ["provider": credential.provider]
                     
-                    let userData = ["provider": credential.provider, "displayName": name, "profileURL": profilePhotoURL, "email": email]
-                    self.completeSignIn(id: user.uid, userData: userData as! Dictionary<String, String>)
+                    if let name = user.displayName {
+                        userData["displayName"] = name
+                    }
+                    if let profilePhotoURL = user.photoURL {
+                        userData["profileURL"] = profilePhotoURL.absoluteString
+                    }
+                    if let email = user.email {
+                        userData["email"] = email
+                    }
+                    
+                    self.completeSignIn(id: user.uid, userData: userData as Dictionary<String, AnyObject>)
                 }
             }
         })
@@ -100,7 +107,7 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     }
     
     
-    private func completeSignIn(id: String, userData: Dictionary<String,String>) {
+    private func completeSignIn(id: String, userData: Dictionary<String, AnyObject>) {
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Ding: Data saved to keychain \(keyChainResult)")

@@ -19,9 +19,16 @@ class GameCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        blurView.layer.backgroundColor = UIColor(red:0, green: 0, blue: 0, alpha:0.21).cgColor
         
-        //findATeamLabel.sendSubviewToBack(blurView)
+        blurView.layer.backgroundColor = UIColor(red:0, green: 0, blue: 0, alpha:0.26).cgColor
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = blurView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurView.addSubview(blurEffectView)
+        
+        blurView.bringSubview(toFront: titleLbl)
+        
     }
     
 
