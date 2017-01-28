@@ -21,8 +21,8 @@
 		04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAB3611E1EAE800005C088 /* CoolBtn.swift */; };
 		04EDC7721E3731C5004DD1AD /* PinkCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC7711E3731C5004DD1AD /* PinkCircleView.swift */; };
 		04EDC7741E3763C9004DD1AD /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC7731E3763C9004DD1AD /* GameCell.swift */; };
-		04EDC77A1E378B7C004DD1AD /* FMBlurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC7791E378B7C004DD1AD /* FMBlurable.swift */; };
 		04EDC77F1E389BEB004DD1AD /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC77E1E389BEB004DD1AD /* DataService.swift */; };
+		04EDC7811E3B5715004DD1AD /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC7801E3B5715004DD1AD /* Game.swift */; };
 		04FDCE621E363FC5005F8911 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDCE611E363FC5005F8911 /* ProfileVC.swift */; };
 		6EC765B51546F3E7EDD00520 /* Pods_socialsports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D65D1A7D3B7ED553EF0495 /* Pods_socialsports.framework */; };
 /* End PBXBuildFile section */
@@ -45,8 +45,8 @@
 		04CAB3611E1EAE800005C088 /* CoolBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolBtn.swift; sourceTree = "<group>"; };
 		04EDC7711E3731C5004DD1AD /* PinkCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinkCircleView.swift; sourceTree = "<group>"; };
 		04EDC7731E3763C9004DD1AD /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
-		04EDC7791E378B7C004DD1AD /* FMBlurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMBlurable.swift; sourceTree = "<group>"; };
 		04EDC77E1E389BEB004DD1AD /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		04EDC7801E3B5715004DD1AD /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		04FDCE611E363FC5005F8911 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		05BE0481D2183C172A38DE46 /* Pods-socialsports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialsports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socialsports/Pods-socialsports.debug.xcconfig"; sourceTree = "<group>"; };
 		43D65D1A7D3B7ED553EF0495 /* Pods_socialsports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialsports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +105,7 @@
 		04CAB35A1E1E83BA0005C088 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04EDC7801E3B5715004DD1AD /* Game.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -128,7 +129,6 @@
 				0498694E1E35F7AD002CC562 /* FancyField.swift */,
 				04EDC7711E3731C5004DD1AD /* PinkCircleView.swift */,
 				04EDC7731E3763C9004DD1AD /* GameCell.swift */,
-				04EDC7791E378B7C004DD1AD /* FMBlurable.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -303,8 +303,8 @@
 				04EDC7741E3763C9004DD1AD /* GameCell.swift in Sources */,
 				04FDCE621E363FC5005F8911 /* ProfileVC.swift in Sources */,
 				04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */,
-				04EDC77A1E378B7C004DD1AD /* FMBlurable.swift in Sources */,
 				046204131E1F65960096BA70 /* FeedVC.swift in Sources */,
+				04EDC7811E3B5715004DD1AD /* Game.swift in Sources */,
 				04CAB3471E1E7C110005C088 /* AppDelegate.swift in Sources */,
 				0498694D1E35F77B002CC562 /* FancyView.swift in Sources */,
 				04EDC7721E3731C5004DD1AD /* PinkCircleView.swift in Sources */,

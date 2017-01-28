@@ -17,6 +17,8 @@ class GameCell: UITableViewCell {
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var blurView: UIView!
     
+    private var game: Game!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -31,6 +33,12 @@ class GameCell: UITableViewCell {
         
     }
     
+    func configureCell(game: Game) {
+        self.game = game
+        self.titleLbl.text = game.title
+        self.likesLbl.text = "\(game.likes)"
+        
+    }
 
     
 

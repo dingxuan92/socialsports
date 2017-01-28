@@ -169,7 +169,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="368" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mU5-2y-UTW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.078431372549019607" green="0.15686274509803921" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="368" id="GoX-Vb-hml" customClass="GameCell" customModule="socialsports" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="368"/>
@@ -305,6 +305,7 @@
                                                 <color key="backgroundColor" red="0.078431372549019607" green="0.15686274509803921" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <outlet property="blurView" destination="7Z5-W9-iv1" id="93E-dK-9qA"/>
+                                                    <outlet property="likesLbl" destination="ukj-J9-ceA" id="BeD-ff-ed8"/>
                                                     <outlet property="titleLbl" destination="IrJ-zF-7dE" id="I1J-eM-lfN"/>
                                                 </connections>
                                             </tableViewCell>
