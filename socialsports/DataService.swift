@@ -11,6 +11,7 @@ import Firebase
 import SwiftKeychainWrapper
 
 let DB_BASE = FIRDatabase.database().reference()
+let STORAGE_BASE = FIRStorage.storage().reference()
 
 class DataService {
     
@@ -20,6 +21,13 @@ class DataService {
     private var _REF_BASE = DB_BASE
     private var _REF_GAMES = DB_BASE.child("game")
     private var _REF_USERS = DB_BASE.child("users")
+    
+    // Storage references
+    
+    private var _REF_GAME_IMAGES = STORAGE_BASE.child("games")
+    private var _REF_PROF_PICS = STORAGE_BASE.child("profilepic")
+    
+    //Database
     
     var REF_BASE: FIRDatabaseReference { //so that you can only read but not write?
         return _REF_BASE
@@ -37,6 +45,16 @@ class DataService {
         let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
         let user = REF_USERS.child(uid!)
         return user
+    }
+    
+    //Storage
+    
+    var REF_GAME_IMAGES: FIRStorageReference {
+        return _REF_GAME_IMAGES
+    }
+    
+    var REF_PROF_PICS: FIRStorageReference {
+        return _REF_PROF_PICS
     }
     
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, AnyObject>) {

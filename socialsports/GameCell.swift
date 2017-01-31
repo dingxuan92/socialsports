@@ -12,7 +12,7 @@ class GameCell: UITableViewCell {
 
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var usernameLbl: UILabel!
-    @IBOutlet weak var postImg: UIImageView!
+    @IBOutlet weak var gameImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var blurView: UIView!
