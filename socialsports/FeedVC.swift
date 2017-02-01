@@ -70,6 +70,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "goToProfile", sender: nil)
     }
 
+    @IBAction func addGameBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToAddGameVC", sender: nil)
+    }
 
 
 

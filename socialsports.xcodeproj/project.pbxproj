@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		046204131E1F65960096BA70 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046204121E1F65960096BA70 /* FeedVC.swift */; };
+		049467021E41E5F500147C50 /* AddGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049467011E41E5F500147C50 /* AddGameVC.swift */; };
 		0498694B1E35F744002CC562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694A1E35F744002CC562 /* CircleView.swift */; };
 		0498694D1E35F77B002CC562 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694C1E35F77B002CC562 /* FancyView.swift */; };
 		0498694F1E35F7AD002CC562 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694E1E35F7AD002CC562 /* FancyField.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		0422099D1E1F614600D2BAF1 /* socialsports.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialsports.entitlements; sourceTree = "<group>"; };
 		046204121E1F65960096BA70 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		049467011E41E5F500147C50 /* AddGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameVC.swift; sourceTree = "<group>"; };
 		0498694A1E35F744002CC562 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		0498694C1E35F77B002CC562 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		0498694E1E35F7AD002CC562 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				046204121E1F65960096BA70 /* FeedVC.swift */,
 				04FDCE611E363FC5005F8911 /* ProfileVC.swift */,
 				04EDC7821E3C7477004DD1AD /* SettingsVC.swift */,
+				049467011E41E5F500147C50 /* AddGameVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				04CAB3491E1E7C110005C088 /* SignInVC.swift in Sources */,
 				04EDC7741E3763C9004DD1AD /* GameCell.swift in Sources */,
 				04FDCE621E363FC5005F8911 /* ProfileVC.swift in Sources */,
+				049467021E41E5F500147C50 /* AddGameVC.swift in Sources */,
 				04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */,
 				046204131E1F65960096BA70 /* FeedVC.swift in Sources */,
 				04EDC7811E3B5715004DD1AD /* Game.swift in Sources */,

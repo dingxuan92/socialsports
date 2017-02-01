@@ -12,8 +12,9 @@ class FancyField: UITextField {
 
     
     override func awakeFromNib() {
-        layer.borderColor = UIColor(red: SHADOW_GRAY, green: SHADOW_GRAY, blue: SHADOW_GRAY, alpha: 0.2).cgColor
+        layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 1.0
+        layer.cornerRadius = 10.0
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
