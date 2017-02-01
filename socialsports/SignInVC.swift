@@ -15,6 +15,9 @@ import GoogleSignIn
 
 class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
+    @IBOutlet weak var actInd: UIActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -28,12 +31,16 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     }
     
     @IBAction private func googleButtonPressed(_ sender: Any) {
+        actInd.isHidden = false
+        actInd.startAnimating()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction private func fbButtonPressed(_ sender: Any) {
+        actInd.isHidden = false
+        actInd.startAnimating()
         
         let facebookLogin = FBSDKLoginManager()
         
@@ -43,7 +50,7 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                 print("Ding: Unable to authenticate with Facebook - \(error)")
                 
             } else if result?.isCancelled == true {
-                
+                self.actInd.stopAnimating()
                 print("Ding: User cancelled Facebook Authentication")
                 
             } else {
@@ -76,7 +83,7 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                     if let email = user.email {
                         userData["email"] = email
                     }
-                    
+                    self.actInd.stopAnimating()
                     self.completeSignIn(id: user.uid, userData: userData as Dictionary<String, AnyObject>)
                 }
             }
