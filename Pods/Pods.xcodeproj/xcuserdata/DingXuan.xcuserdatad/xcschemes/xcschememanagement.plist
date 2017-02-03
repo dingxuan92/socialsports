@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DateTimePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,6 +35,11 @@
 			<false/>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LocationPickerViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8DE3DB21789BD42A50F3517883770AC0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9E3B8C571BD58626A08AAC708D6CF971</key>
+		<key>9FA73695D1E57996C128686ADB24DCC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB6408D404E6BC4721E13529522E3816</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -83,6 +93,16 @@
 			<true/>
 		</dict>
 		<key>BEF7E6E85DB5CDE5D7A18F4F2EB8494B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED10AF7E84D089532C9EB84BF1B20B0B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDB5BE9A0CA6C4888CCB9C65E2731F36</key>
 		<dict>
 			<key>primary</key>
 			<true/>

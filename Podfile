@@ -14,5 +14,6 @@ target 'socialsports' do
   pod 'FBSDKLoginKit', "~> 4.17.0”;
   pod 'SwiftKeychainWrapper'
   pod 'GoogleSignIn'
-  
+  pod 'DateTimePicker'
+  pod 'LocationPickerViewController'
 end

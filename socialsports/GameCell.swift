@@ -38,6 +38,10 @@ class GameCell: UITableViewCell {
         self.titleLbl.text = game.title
         self.likesLbl.text = "\(game.likes)"
         
+//        if img != nil {
+//            self.gameImg.image = img
+//        }
+        
     }
 
     

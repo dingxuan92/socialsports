@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040442EA1E42DA31002E7BB7 /* FancyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040442E91E42DA31002E7BB7 /* FancyLabel.swift */; };
 		046204131E1F65960096BA70 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046204121E1F65960096BA70 /* FeedVC.swift */; };
 		049467021E41E5F500147C50 /* AddGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049467011E41E5F500147C50 /* AddGameVC.swift */; };
 		0498694B1E35F744002CC562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694A1E35F744002CC562 /* CircleView.swift */; };
@@ -26,11 +27,15 @@
 		04EDC7811E3B5715004DD1AD /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC7801E3B5715004DD1AD /* Game.swift */; };
 		04EDC7831E3C7477004DD1AD /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC7821E3C7477004DD1AD /* SettingsVC.swift */; };
 		04EDC7851E3DCB34004DD1AD /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC7841E3DCB34004DD1AD /* ProfileCell.swift */; };
+		04F66D5C1E42E7DB0044D331 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F66D591E42E7DB0044D331 /* DateCollectionViewCell.swift */; };
+		04F66D5D1E42E7DB0044D331 /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F66D5A1E42E7DB0044D331 /* DateTimePicker.swift */; };
+		04F66D5E1E42E7DB0044D331 /* StepCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F66D5B1E42E7DB0044D331 /* StepCollectionViewFlowLayout.swift */; };
 		04FDCE621E363FC5005F8911 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDCE611E363FC5005F8911 /* ProfileVC.swift */; };
 		6EC765B51546F3E7EDD00520 /* Pods_socialsports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D65D1A7D3B7ED553EF0495 /* Pods_socialsports.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040442E91E42DA31002E7BB7 /* FancyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyLabel.swift; sourceTree = "<group>"; };
 		0422099D1E1F614600D2BAF1 /* socialsports.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialsports.entitlements; sourceTree = "<group>"; };
 		046204121E1F65960096BA70 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		049467011E41E5F500147C50 /* AddGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameVC.swift; sourceTree = "<group>"; };
@@ -53,6 +58,9 @@
 		04EDC7801E3B5715004DD1AD /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		04EDC7821E3C7477004DD1AD /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		04EDC7841E3DCB34004DD1AD /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		04F66D591E42E7DB0044D331 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		04F66D5A1E42E7DB0044D331 /* DateTimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimePicker.swift; sourceTree = "<group>"; };
+		04F66D5B1E42E7DB0044D331 /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		04FDCE611E363FC5005F8911 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		05BE0481D2183C172A38DE46 /* Pods-socialsports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialsports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socialsports/Pods-socialsports.debug.xcconfig"; sourceTree = "<group>"; };
 		43D65D1A7D3B7ED553EF0495 /* Pods_socialsports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialsports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +100,7 @@
 		04CAB3451E1E7C110005C088 /* socialsports */ = {
 			isa = PBXGroup;
 			children = (
+				04F66D581E42E7C80044D331 /* Source */,
 				04EDC77D1E389BCC004DD1AD /* Services */,
 				0422099D1E1F614600D2BAF1 /* socialsports.entitlements */,
 				04CAB35E1E1EAC770005C088 /* Utility */,
@@ -138,6 +147,7 @@
 				04EDC7711E3731C5004DD1AD /* PinkCircleView.swift */,
 				04EDC7731E3763C9004DD1AD /* GameCell.swift */,
 				04EDC7841E3DCB34004DD1AD /* ProfileCell.swift */,
+				040442E91E42DA31002E7BB7 /* FancyLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -156,6 +166,16 @@
 				04EDC77E1E389BEB004DD1AD /* DataService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		04F66D581E42E7C80044D331 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				04F66D591E42E7DB0044D331 /* DateCollectionViewCell.swift */,
+				04F66D5A1E42E7DB0044D331 /* DateTimePicker.swift */,
+				04F66D5B1E42E7DB0044D331 /* StepCollectionViewFlowLayout.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 		09E4914559E34A7F2AD6E5E7 /* Frameworks */ = {
@@ -311,6 +331,7 @@
 				04CAB3491E1E7C110005C088 /* SignInVC.swift in Sources */,
 				04EDC7741E3763C9004DD1AD /* GameCell.swift in Sources */,
 				04FDCE621E363FC5005F8911 /* ProfileVC.swift in Sources */,
+				04F66D5E1E42E7DB0044D331 /* StepCollectionViewFlowLayout.swift in Sources */,
 				049467021E41E5F500147C50 /* AddGameVC.swift in Sources */,
 				04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */,
 				046204131E1F65960096BA70 /* FeedVC.swift in Sources */,
@@ -318,9 +339,12 @@
 				04EDC7851E3DCB34004DD1AD /* ProfileCell.swift in Sources */,
 				04CAB3471E1E7C110005C088 /* AppDelegate.swift in Sources */,
 				0498694D1E35F77B002CC562 /* FancyView.swift in Sources */,
+				04F66D5D1E42E7DB0044D331 /* DateTimePicker.swift in Sources */,
 				04EDC7721E3731C5004DD1AD /* PinkCircleView.swift in Sources */,
 				04CAB3601E1EACA70005C088 /* Constants.swift in Sources */,
 				04EDC7831E3C7477004DD1AD /* SettingsVC.swift in Sources */,
+				04F66D5C1E42E7DB0044D331 /* DateCollectionViewCell.swift in Sources */,
+				040442EA1E42DA31002E7BB7 /* FancyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

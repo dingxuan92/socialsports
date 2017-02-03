@@ -24,7 +24,7 @@ class DataService {
     
     // Storage references
     
-    private var _REF_GAME_IMAGES = STORAGE_BASE.child("games")
+    private var _REF_GAME_IMAGES = STORAGE_BASE.child("game-pics")
     private var _REF_PROF_PICS = STORAGE_BASE.child("profilepic")
     
     //Database
@@ -56,6 +56,8 @@ class DataService {
     var REF_PROF_PICS: FIRStorageReference {
         return _REF_PROF_PICS
     }
+    
+    //Create user data into firebase database
     
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, AnyObject>) {
         REF_USERS.child(uid).child("profile").updateChildValues(userData)
