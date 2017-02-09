@@ -7,43 +7,128 @@
 //
 
 import UIKit
+import Firebase
+import CoreLocation
 
 class GameCell: UITableViewCell {
-
+    
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var gameImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var blurView: UIView!
+    @IBOutlet weak var likeImg: UIImageView!
+    @IBOutlet weak var numPlayersLbl: UILabel!
+    @IBOutlet weak var distanceLbl: UILabel!
     
     private var game: Game!
+    var likesRef: FIRDatabaseReference!
+    var userRef: FIRDatabaseReference!
+    var locationRef: FIRDatabaseReference!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        blurView.layer.backgroundColor = UIColor(red:0, green: 0, blue: 0, alpha:0.26).cgColor
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = blurView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurView.addSubview(blurEffectView)
-        
         blurView.bringSubview(toFront: titleLbl)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1            //hard code the gesture recognizer because table view cell, storyboard linking cannot differentiate which cell
+        likeImg.addGestureRecognizer(tap)
+        likeImg.isUserInteractionEnabled = true
+        
     }
     
-    func configureCell(game: Game) {
+    //Update UI
+    func configureCell(game: Game, img: UIImage? = nil) {
         self.game = game
+        
+        likesRef = DataService.ds.REF_USERS_CURRENT.child("likes").child(game.gameKey)
+        userRef = DataService.ds.REF_USERS.child(game.creator).child("profile")
+        locationRef = DataService.ds.REF_GAMES.child(game.gameKey).child("location")
+        
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            if let username = value?["displayName"] as? String {
+            self.usernameLbl.text = username
+            }
+            if let img = value?["profileURL"] as? String {
+                if let imgURL = NSURL(string: img) {
+                    let data = NSData(contentsOf: imgURL as URL)
+                    self.profileImg.image = UIImage(data: data as! Data)
+                }
+            }
+        })
+        
+        locationRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            if let lat = value?["latitude"] as? Double {
+                if let long = value?["longitude"] as? Double {
+                    let gameCoordinates = CLLocation(latitude: lat, longitude: long)
+                    let userCoordinates = CLLocation(latitude: Location.sharedInstance.latitude, longitude: Location.sharedInstance.longitude)
+                    let distanceInMeters = userCoordinates.distance(from: gameCoordinates) / 1000
+                    let distanceInOneDecimal = round(distanceInMeters * 10) / 10
+                    self.distanceLbl.text = "\(distanceInOneDecimal) km"
+
+                }
+            }
+        })
+        
         self.titleLbl.text = game.title
         self.likesLbl.text = "\(game.likes)"
+        self.numPlayersLbl.text = "\(game.attendance) / \(game.maxppl)"
         
-//        if img != nil {
-//            self.gameImg.image = img
-//        }
+        if img != nil { //if image exist in cache
+            self.gameImg.image = img
+        } else {
+            let ref = FIRStorage.storage().reference(forURL: game.imageUrl)
+            ref.data(withMaxSize: 4 * 1024 * 1024, completion: { (data, error) in
+                if error != nil {
+                    print("DING: Unable to download image from Firebase Storage")
+                } else {
+                    print("DING: Image downloaded from firebase storage")
+                    if let imgData = data { //save the image downloaded from storage into cache
+                        if let img = UIImage(data: imgData) {
+                            self.gameImg.image = img
+                            FeedVC.imageCache.setObject(img, forKey: game.imageUrl as NSString)
+                        }
+                    }
+                }
+            })
+        }
+        
+        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.likeImg.image = UIImage(named: "unfilledStar")
+            } else {
+                self.likeImg.image = UIImage(named: "filledStar")
+            }
+        })
         
     }
-
     
-
+    func likeTapped(sender: UITapGestureRecognizer) {
+        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.likeImg.image = UIImage(named: "filledStar")
+                self.game.adjustLikes(addLike: true)
+                self.likesRef.setValue(true)
+            } else {
+                self.likeImg.image = UIImage(named: "unfilledStar")
+                self.game.adjustLikes(addLike: false)
+                self.likesRef.removeValue()
+            }
+        })
+        
+    }
+    
 }
+
+
+
+

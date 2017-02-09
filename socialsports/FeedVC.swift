@@ -11,18 +11,40 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
 import SwiftKeychainWrapper
+import CoreLocation
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
+    @IBOutlet weak var profileImg: CircleView!
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var games = [Game]()
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            if let photoURL = user.photoURL {
+                let data = NSData(contentsOf: photoURL)
+                profileImg.image = UIImage(data: data as! Data)
+            }
+            if let name = user.displayName {
+                userName.text = name
+            }
+        }
         
         DataService.ds.REF_GAMES.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -43,6 +65,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        locationAuthStatus()
+        print(Location.sharedInstance.latitude, Location.sharedInstance.longitude)
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -59,6 +87,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let game = games[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameCell {
+            if let img = FeedVC.imageCache.object(forKey: game.imageUrl as NSString) {
+                cell.configureCell(game: game, img: img)
+                return cell
+            }
             cell.configureCell(game: game)
             return cell
         } else {
@@ -72,6 +104,17 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBAction func addGameBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "goToAddGameVC", sender: nil)
+    }
+    
+    func locationAuthStatus() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            currentLocation = locationManager.location
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+            locationAuthStatus()
+        }
     }
 
 

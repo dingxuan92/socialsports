@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		040442EA1E42DA31002E7BB7 /* FancyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040442E91E42DA31002E7BB7 /* FancyLabel.swift */; };
+		041A27941E4AEFBA000203AF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A27931E4AEFBA000203AF /* Location.swift */; };
 		046204131E1F65960096BA70 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046204121E1F65960096BA70 /* FeedVC.swift */; };
 		049467021E41E5F500147C50 /* AddGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049467011E41E5F500147C50 /* AddGameVC.swift */; };
 		0498694B1E35F744002CC562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694A1E35F744002CC562 /* CircleView.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		040442E91E42DA31002E7BB7 /* FancyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyLabel.swift; sourceTree = "<group>"; };
+		041A27931E4AEFBA000203AF /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0422099D1E1F614600D2BAF1 /* socialsports.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialsports.entitlements; sourceTree = "<group>"; };
 		046204121E1F65960096BA70 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		049467011E41E5F500147C50 /* AddGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameVC.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				04EDC7801E3B5715004DD1AD /* Game.swift */,
+				041A27931E4AEFBA000203AF /* Location.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				04EDC7811E3B5715004DD1AD /* Game.swift in Sources */,
 				04EDC7851E3DCB34004DD1AD /* ProfileCell.swift in Sources */,
 				04CAB3471E1E7C110005C088 /* AppDelegate.swift in Sources */,
+				041A27941E4AEFBA000203AF /* Location.swift in Sources */,
 				0498694D1E35F77B002CC562 /* FancyView.swift in Sources */,
 				04F66D5D1E42E7DB0044D331 /* DateTimePicker.swift in Sources */,
 				04EDC7721E3731C5004DD1AD /* PinkCircleView.swift in Sources */,

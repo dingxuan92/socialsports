@@ -38,7 +38,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             if !snapshot.exists() { return }
             
-            if let provider = snapshot.childSnapshot(forPath: "provider").value as! String! {
+            if let provider = snapshot.childSnapshot(forPath: "profile/provider").value as! String! {
                 if provider == "facebook.com" {
                     print("yes it is facebook")
                     self.returnUserData()

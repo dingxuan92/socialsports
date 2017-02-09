@@ -8,17 +8,24 @@
 
 import UIKit
 import LocationPickerViewController
+import Firebase
+import SwiftKeychainWrapper
 
 class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationPickerDelegate, LocationPickerDataSource{
     
+    @IBOutlet weak var titleField: FancyField!
+    @IBOutlet weak var maxPlayersField: FancyField!
     @IBOutlet weak var dateLbl: FancyLabel!
     @IBOutlet weak var timeLbl: FancyLabel!
     @IBOutlet weak var imageAdd: UIImageView!
-    @IBOutlet weak var locationLbl: FancyLabel! // not done yet
+    @IBOutlet weak var locationLbl: FancyLabel!
+    @IBOutlet weak var descriptionField: FancyField!
     
     var current = Date()
     var imagePicker: UIImagePickerController!
-    var x = 0
+    var selectedImage = false
+    private var latitude: Double!
+    private var longitude: Double!
     
     var historyLocationList: [LocationItem] {
         get {
@@ -92,6 +99,8 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     func showLocation(locationItem: LocationItem) {
         locationLbl.text = locationItem.name
+        latitude = locationItem.coordinate?.latitude
+        longitude = locationItem.coordinate?.longitude
         //locationItem.formattedAddressString
     }
     
@@ -107,6 +116,7 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage { //making sure that it returns an image, check if its an image
             imageAdd.image = image
+            selectedImage = true
         } else {
             print("DING: A Valid image wasn't selected")
         }
@@ -139,7 +149,90 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         }
     }
     
-    //# of players pickerView continue later
+    @IBAction func createGameBtnPressed(_ sender: Any) {
+        guard let title = titleField.text, title != "" else {
+            print("DING: Title must be entered")
+            return
+        }
+        //image
+        guard let image = imageAdd.image, selectedImage == true else {
+            print("DING: Image must be added")
+            return
+        }
+        guard let date = dateLbl.text, date != "" else {
+            print("DING: Date must be entered")
+            return
+        }
+        guard let time = timeLbl.text, time != "" else {
+            print("DING: Time must be entered")
+            return
+        }
+        guard let location = locationLbl.text , location != "" else {
+            print("DING: Location must be entered")
+            return
+        }
+        guard let maxPlayers = maxPlayersField.text, maxPlayers != "" else {
+            print("DING: Max players must be entered")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(image, 0.2) { //compress the image
+            let imgUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_GAME_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print("DING: Unable to upload image to Firebase storage")
+                } else {
+                    print("DING: Successfully upload image to Firebase storage")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imgUrl: url)
+                    }
+                }
+                
+            }
+        }
+        
+        
+    }
+    
+    func postToFirebase(imgUrl: String) {
+        let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
+        
+        let post: Dictionary<String, AnyObject> = [
+            "title": titleField.text! as AnyObject,
+            "imageUrl": imgUrl as AnyObject,
+            "likes": 0 as AnyObject,
+            "date": dateLbl.text! as AnyObject,
+            "maxppl": maxPlayersField.text! as AnyObject,
+            "time": timeLbl.text! as AnyObject,
+            "description": descriptionField.text! as AnyObject,
+            "creator": uid! as AnyObject,
+            "attendance": 1 as AnyObject
+        ]
+        
+        let attending: Dictionary<String, Bool> = [
+            "\(uid!)": true
+        ]
+        
+        let location: Dictionary<String, AnyObject> = [
+            "name": locationLbl.text! as AnyObject,
+            "longitude": longitude as AnyObject,
+            "latitude": latitude as AnyObject
+        ]
+        
+        let firebasePost = DataService.ds.REF_GAMES.childByAutoId()
+        firebasePost.setValue(post)
+        firebasePost.child("attending").setValue(attending)
+        firebasePost.child("location").setValue(location)
+        selectedImage = false
+        self.dismiss(animated: true, completion: nil)
+        
+        
+    }
+    
     
 
     

@@ -15,6 +15,12 @@ class Game {
     private var _likes: Int!
     private var _imageUrl: String!
     private var _gameKey: String!
+    private var _attendance: Int!
+    private var _creator: String!
+    private var _description: String!
+    private var _location: String!
+    private var _maxppl: String!
+    private var _gameRef: FIRDatabaseReference!
     
     var title: String {
         return _title
@@ -26,6 +32,26 @@ class Game {
     
     var imageUrl: String {
         return _imageUrl
+    }
+    
+    var attendance: Int {
+        return _attendance
+    }
+    
+    var creator: String {
+        return _creator
+    }
+    
+    var description: String {
+        return _description
+    }
+    
+    var location: String {
+        return _location
+    }
+    
+    var maxppl: String {
+        return _maxppl
     }
     
     var gameKey: String {
@@ -53,5 +79,28 @@ class Game {
             self._imageUrl = imageUrl
         }
         
+        if let maxppl = postData["maxppl"] as? String {
+            self._maxppl = maxppl
+        }
+        
+        if let attendance = postData["attendance"] as? Int {
+            self._attendance = attendance
+        }
+        
+        if let creator = postData["creator"] as? String {
+            self._creator = creator
+        }
+        
+        _gameRef = DataService.ds.REF_GAMES.child(gameKey)
+        
+    }
+    
+    func adjustLikes(addLike: Bool) {
+        if addLike {
+            _likes = _likes + 1
+        } else {
+            _likes = _likes - 1
+        }
+        _gameRef.child("likes").setValue(_likes)
     }
 }
