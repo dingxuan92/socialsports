@@ -16,4 +16,5 @@ target 'socialsports' do
   pod 'GoogleSignIn'
   pod 'DateTimePicker'
   pod 'LocationPickerViewController'
+  pod 'SwiftDate', '~> 4.0'
 end

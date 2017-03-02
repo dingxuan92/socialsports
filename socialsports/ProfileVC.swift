@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 import FBSDKCoreKit
+import SwiftDate
 
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,7 +20,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var profileAge: UILabel!
     @IBOutlet weak var profilePlayed: UILabel!
     @IBOutlet weak var profileGender: UIImageView!
-    
     
     var profileRef: FIRDatabaseReference!
     var profilePicRef: FIRStorageReference!
@@ -32,8 +32,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         profileTableView.dataSource = self
         
         profileRef = DataService.ds.REF_USERS_CURRENT
-        
-    
+
         profileRef.observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists() { return }
@@ -135,5 +134,18 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
     }
+    
+    @IBAction func addGameBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "profileToAddGame", sender: nil)
+        
+    }
+
+    @IBAction func feedBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ProfileToFeed", sender: nil)
+        
+        
+    }
+    
+    
 }
 

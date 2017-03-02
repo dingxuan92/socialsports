@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="11" id="hRf-Uh-Prw"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86p-dV-1aY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86p-dV-1aY" customClass="CoolBtn" customModule="socialsports" customModuleProvider="target">
                                 <rect key="frame" x="53" y="495" width="275" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="ol5-a0-Qx5"/>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZBq-pX-UXu">
-                                <rect key="frame" x="168" y="314" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="KVy-Pf-ZKQ"/>
                                     <constraint firstAttribute="width" constant="40" id="l94-hE-86k"/>
@@ -171,6 +171,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orH-n1-Q14">
                                                 <rect key="frame" x="270" y="0.0" width="46" height="39"/>
                                                 <state key="normal" image="map"/>
+                                                <connections>
+                                                    <action selector="mapBtnPressed:" destination="y6c-28-pYi" eventType="touchUpInside" id="Wt1-un-m95"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -213,7 +216,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketballcourt" translatesAutoresizingMaskIntoConstraints="NO" id="dae-sC-OUE">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketballcourt" translatesAutoresizingMaskIntoConstraints="NO" id="dae-sC-OUE">
                                                             <rect key="frame" x="0.0" y="73" width="375" height="250"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="250" id="ZcH-I2-luK"/>
@@ -350,6 +353,7 @@
                                                     <outlet property="likesLbl" destination="ukj-J9-ceA" id="BeD-ff-ed8"/>
                                                     <outlet property="numPlayersLbl" destination="SaQ-gc-Xp8" id="uZZ-qe-TFt"/>
                                                     <outlet property="profileImg" destination="YSF-3W-3Ym" id="Rnp-Dd-IVZ"/>
+                                                    <outlet property="timeLbl" destination="Ia8-7f-vGF" id="sMa-R1-XSz"/>
                                                     <outlet property="titleLbl" destination="IrJ-zF-7dE" id="I1J-eM-lfN"/>
                                                     <outlet property="usernameLbl" destination="Dy4-gt-77w" id="Vyn-3p-Jpn"/>
                                                 </connections>
@@ -387,6 +391,7 @@
                         <outlet property="userName" destination="far-gp-vtV" id="8Dr-zU-NYL"/>
                         <segue destination="c0q-0R-bcE" kind="show" identifier="goToProfile" id="XxB-Vf-b1n"/>
                         <segue destination="lJu-HV-HL9" kind="show" identifier="goToAddGameVC" id="DeB-JS-qfJ"/>
+                        <segue destination="opl-fS-WaN" kind="show" identifier="goToMap" id="Jbw-cF-9Ox"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yn6-Nl-RJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,7 +406,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="52.623688155922046"/>
+            <point key="canvasLocation" x="816.5" y="52.5"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="o68-lw-pOM">
@@ -424,10 +429,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sst-PQ-zj6">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="39"/>
                                                 <state key="normal" image="Feed-button"/>
+                                                <connections>
+                                                    <action selector="feedBtnPressed:" destination="c0q-0R-bcE" eventType="touchUpInside" id="Qb8-iP-Mh2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cv-uV-5Gz">
                                                 <rect key="frame" x="134" y="0.0" width="39" height="39"/>
                                                 <state key="normal" image="Add-Game"/>
+                                                <connections>
+                                                    <action selector="addGameBtnPressed:" destination="c0q-0R-bcE" eventType="touchUpInside" id="gZN-cI-c1X"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PN-gf-EiY">
                                                 <rect key="frame" x="270" y="0.0" width="46" height="39"/>
@@ -701,11 +712,13 @@
                         <outlet property="profilePlayed" destination="8Ne-rw-MtA" id="AMJ-vq-lvt"/>
                         <outlet property="profileTableView" destination="pwG-TD-rKw" id="3tt-Zd-lYe"/>
                         <segue destination="ot1-f8-7GU" kind="show" identifier="goToSettings" id="sVD-k3-8Vo"/>
+                        <segue destination="lJu-HV-HL9" kind="show" identifier="profileToAddGame" id="BZ4-gu-jLC"/>
+                        <segue destination="y6c-28-pYi" kind="show" identifier="ProfileToFeed" id="l78-EU-e0l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hw-XI-Csw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610.144927536232" y="53.804347826086961"/>
+            <point key="canvasLocation" x="1775" y="53"/>
         </scene>
         <!--Add GameVC-->
         <scene sceneID="ULm-7A-lXf">
@@ -856,7 +869,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0t-HL-abI">
                                 <rect key="frame" x="38" y="566" width="300" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.60133928569999995" blue="0.45446428570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="LVT-ap-aVC"/>
                                 </constraints>
@@ -978,7 +991,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="759.67016491754134"/>
+            <point key="canvasLocation" x="817" y="1031"/>
         </scene>
         <!--Location Picker-->
         <scene sceneID="Mbs-pt-btL">
@@ -996,7 +1009,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AuU-GG-cBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817" y="1522"/>
+            <point key="canvasLocation" x="817" y="1755"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="JGS-uV-sRo">
@@ -1076,7 +1089,151 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G95-Vh-QB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378" y="56"/>
+            <point key="canvasLocation" x="2801" y="53"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="9QD-yU-dnY">
+            <objects>
+                <viewController id="opl-fS-WaN" customClass="MapVC" customModule="socialsports" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vwm-hD-QXu"/>
+                        <viewControllerLayoutGuide type="bottom" id="pg4-Qc-LX5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mhr-Vg-x7I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="are-ic-vcr">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="97" translatesAutoresizingMaskIntoConstraints="NO" id="9JS-ek-RAX">
+                                        <rect key="frame" x="29" y="6" width="316" height="39"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6U-Vy-9rU">
+                                                <rect key="frame" x="0.0" y="0.0" width="37" height="39"/>
+                                                <state key="normal" image="Feed-button"/>
+                                                <connections>
+                                                    <action selector="FeedBtnPressed:" destination="opl-fS-WaN" eventType="touchUpInside" id="w6X-5r-7G1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i76-6I-cUd">
+                                                <rect key="frame" x="134" y="0.0" width="39" height="39"/>
+                                                <state key="normal" image="Add-Game"/>
+                                                <connections>
+                                                    <action selector="addGameBtnPressed:" destination="c0q-0R-bcE" eventType="touchUpInside" id="dAT-el-9AT"/>
+                                                    <action selector="goToAddGame:" destination="opl-fS-WaN" eventType="touchUpInside" id="GCE-AX-9in"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0L-B3-3rB">
+                                                <rect key="frame" x="270" y="0.0" width="46" height="39"/>
+                                                <state key="normal" image="map-yellow"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9JS-ek-RAX" firstAttribute="centerY" secondItem="are-ic-vcr" secondAttribute="centerY" id="84e-7p-wbf"/>
+                                    <constraint firstItem="9JS-ek-RAX" firstAttribute="centerX" secondItem="are-ic-vcr" secondAttribute="centerX" id="NiH-sl-sTq"/>
+                                    <constraint firstAttribute="height" constant="50" id="cAY-zS-Cwd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRu-ix-vGq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dxprofilepic" translatesAutoresizingMaskIntoConstraints="NO" id="p0z-ne-2c5" customClass="CircleView" customModule="socialsports" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="2" width="40" height="46"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="3EX-KM-ak4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="aih-9Q-QkK" appends="YES" id="nmn-27-LGd"/>
+                                        </connections>
+                                    </imageView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lee Kwang Soo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-af-pp4">
+                                        <rect key="frame" x="56" y="13.5" width="124" height="23.5"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="9ea-Ts-C8z" appends="YES" id="8R6-1a-Z2k"/>
+                                        </connections>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW1-60-EcB">
+                                        <rect key="frame" x="336" y="10" width="24" height="30"/>
+                                        <state key="normal" image="notification"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="p0z-ne-2c5" firstAttribute="top" secondItem="RRu-ix-vGq" secondAttribute="top" constant="2" id="5Dc-E2-IDp"/>
+                                    <constraint firstAttribute="bottom" secondItem="p0z-ne-2c5" secondAttribute="bottom" constant="2" id="Hu6-ZC-RYw"/>
+                                    <constraint firstAttribute="bottom" secondItem="DW1-60-EcB" secondAttribute="bottom" constant="10" id="Oqc-VA-EsQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="DW1-60-EcB" secondAttribute="trailing" constant="15" id="STy-pW-CMw"/>
+                                    <constraint firstAttribute="height" constant="50" id="Sg9-Su-jHO"/>
+                                    <constraint firstItem="jjH-af-pp4" firstAttribute="centerY" secondItem="RRu-ix-vGq" secondAttribute="centerY" id="aBa-kb-alF"/>
+                                    <constraint firstItem="DW1-60-EcB" firstAttribute="top" secondItem="RRu-ix-vGq" secondAttribute="top" constant="10" id="doA-lm-FXK"/>
+                                    <constraint firstItem="p0z-ne-2c5" firstAttribute="leading" secondItem="RRu-ix-vGq" secondAttribute="leading" constant="8" id="j2b-mf-tMC"/>
+                                    <constraint firstItem="jjH-af-pp4" firstAttribute="leading" secondItem="p0z-ne-2c5" secondAttribute="trailing" constant="8" id="wDy-n0-YiU"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YGi-aZ-8Fg">
+                                <rect key="frame" x="0.0" y="50" width="375" height="567"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H7T-xB-6AB" customClass="RoundedButton" customModule="socialsports" customModuleProvider="target">
+                                <rect key="frame" x="42.5" y="542" width="290" height="50"/>
+                                <color key="backgroundColor" red="0.30196078431372547" green="0.79607843137254897" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="iiD-LJ-SbN"/>
+                                    <constraint firstAttribute="height" constant="50" id="s6H-qd-SCb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Find Games Near Your Location">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pg4-Qc-LX5" firstAttribute="top" secondItem="are-ic-vcr" secondAttribute="bottom" id="2K6-iD-95p"/>
+                            <constraint firstItem="RRu-ix-vGq" firstAttribute="leading" secondItem="Mhr-Vg-x7I" secondAttribute="leading" id="4TK-tc-llC"/>
+                            <constraint firstItem="are-ic-vcr" firstAttribute="top" secondItem="YGi-aZ-8Fg" secondAttribute="bottom" id="Grs-zs-RL9"/>
+                            <constraint firstItem="are-ic-vcr" firstAttribute="leading" secondItem="Mhr-Vg-x7I" secondAttribute="leading" id="JFg-aY-C4I"/>
+                            <constraint firstItem="are-ic-vcr" firstAttribute="top" secondItem="H7T-xB-6AB" secondAttribute="bottom" constant="25" id="KSW-nj-UDK"/>
+                            <constraint firstItem="H7T-xB-6AB" firstAttribute="centerX" secondItem="Mhr-Vg-x7I" secondAttribute="centerX" id="PlX-IV-HgG"/>
+                            <constraint firstAttribute="trailing" secondItem="RRu-ix-vGq" secondAttribute="trailing" id="bXn-9R-3Pj"/>
+                            <constraint firstItem="YGi-aZ-8Fg" firstAttribute="leading" secondItem="Mhr-Vg-x7I" secondAttribute="leading" id="eUD-Uz-W5O"/>
+                            <constraint firstItem="YGi-aZ-8Fg" firstAttribute="top" secondItem="RRu-ix-vGq" secondAttribute="bottom" id="hDd-sF-pRz"/>
+                            <constraint firstAttribute="trailing" secondItem="YGi-aZ-8Fg" secondAttribute="trailing" id="tg1-c1-2ey"/>
+                            <constraint firstAttribute="trailing" secondItem="are-ic-vcr" secondAttribute="trailing" id="upr-TA-nc1"/>
+                            <constraint firstItem="RRu-ix-vGq" firstAttribute="top" secondItem="Mhr-Vg-x7I" secondAttribute="top" id="xV2-3A-XzF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="YGi-aZ-8Fg" id="bzM-hs-SWP"/>
+                        <outlet property="profileImg" destination="p0z-ne-2c5" id="dSN-2d-meZ"/>
+                        <outlet property="userName" destination="jjH-af-pp4" id="14N-4O-TIU"/>
+                        <segue destination="y6c-28-pYi" kind="show" identifier="goToFeed" id="to9-2u-JwX"/>
+                        <segue destination="lJu-HV-HL9" kind="show" identifier="goToAddGame" id="TMw-M3-llF"/>
+                        <segue destination="c0q-0R-bcE" kind="show" identifier="MapToProfile" id="j5j-tS-KXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wAo-jF-XNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9ea-Ts-C8z">
+                    <connections>
+                        <action selector="profileButtonPressed:" destination="opl-fS-WaN" id="rql-c3-uFl"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aih-9Q-QkK">
+                    <connections>
+                        <action selector="profileButtonPressed:" destination="opl-fS-WaN" id="H5h-Uo-bQ7"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1692" y="878.41079460269873"/>
         </scene>
     </scenes>
     <resources>
@@ -1102,6 +1259,7 @@
         <image name="exchangeprofile" width="960" height="960"/>
         <image name="male" width="57" height="46"/>
         <image name="map" width="46" height="36"/>
+        <image name="map-yellow" width="46" height="36"/>
         <image name="mapcopy" width="41" height="33"/>
         <image name="notification" width="24" height="28"/>
         <image name="settings_btn" width="24" height="24"/>
@@ -1110,4 +1268,9 @@
         <image name="unfilledStar" width="23" height="21"/>
         <image name="users" width="48" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XxB-Vf-b1n"/>
+        <segue reference="l78-EU-e0l"/>
+        <segue reference="DeB-JS-qfJ"/>
+    </inferredMetricsTieBreakers>
 </document>

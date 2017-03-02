@@ -19,11 +19,11 @@ class SettingsVC: UIViewController {
         return true
     }
     
-    @IBAction func crossButtonPressed(_ sender: Any) {
+    @IBAction private func crossButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func signOutBtnPressed(_ sender: UIButton) {
+    @IBAction private func signOutBtnPressed(_ sender: UIButton) {
         
         let keyResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("Ding: \(keyResult)")

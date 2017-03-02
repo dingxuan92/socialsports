@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftDate
 import CoreLocation
 
 class GameCell: UITableViewCell {
@@ -21,11 +22,15 @@ class GameCell: UITableViewCell {
     @IBOutlet weak var likeImg: UIImageView!
     @IBOutlet weak var numPlayersLbl: UILabel!
     @IBOutlet weak var distanceLbl: UILabel!
+    @IBOutlet weak var timeLbl: UILabel!
     
     private var game: Game!
-    var likesRef: FIRDatabaseReference!
-    var userRef: FIRDatabaseReference!
-    var locationRef: FIRDatabaseReference!
+    
+    
+    private var likesRef: FIRDatabaseReference!
+    private var userRef: FIRDatabaseReference!
+    private var gameRef: FIRDatabaseReference!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,7 +55,7 @@ class GameCell: UITableViewCell {
         
         likesRef = DataService.ds.REF_USERS_CURRENT.child("likes").child(game.gameKey)
         userRef = DataService.ds.REF_USERS.child(game.creator).child("profile")
-        locationRef = DataService.ds.REF_GAMES.child(game.gameKey).child("location")
+        gameRef = DataService.ds.REF_GAMES
         
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -65,7 +70,9 @@ class GameCell: UITableViewCell {
             }
         })
         
-        locationRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        
+        
+        gameRef.child(game.gameKey).child("location").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             if let lat = value?["latitude"] as? Double {
                 if let long = value?["longitude"] as? Double {
@@ -78,6 +85,17 @@ class GameCell: UITableViewCell {
                 }
             }
         })
+        
+        gameRef.child(game.gameKey).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            if let date = value?["date"] as? String {
+                if let time = value?["time"] as? String {
+                    self.timeLbl.text = "\(date), \(time)"
+                }
+            }
+        })
+        
+    
         
         self.titleLbl.text = game.title
         self.likesLbl.text = "\(game.likes)"

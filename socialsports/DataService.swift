@@ -21,6 +21,7 @@ class DataService {
     private var _REF_BASE = DB_BASE
     private var _REF_GAMES = DB_BASE.child("game")
     private var _REF_USERS = DB_BASE.child("users")
+    private var _REF_MAP = DB_BASE.child("map")
     
     // Storage references
     
@@ -39,6 +40,10 @@ class DataService {
     
     var REF_USERS: FIRDatabaseReference {
         return _REF_USERS
+    }
+    
+    var REF_MAP: FIRDatabaseReference {
+        return _REF_MAP
     }
     
     var REF_USERS_CURRENT: FIRDatabaseReference {

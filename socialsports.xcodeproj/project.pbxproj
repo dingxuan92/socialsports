@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		040442EA1E42DA31002E7BB7 /* FancyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040442E91E42DA31002E7BB7 /* FancyLabel.swift */; };
 		041A27941E4AEFBA000203AF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A27931E4AEFBA000203AF /* Location.swift */; };
+		041A27961E4D79C8000203AF /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A27951E4D79C8000203AF /* MapVC.swift */; };
+		044796CE1E5441FE001E0935 /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 044796C51E5441FE001E0935 /* GeoFire.m */; };
+		044796CF1E5441FE001E0935 /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 044796C71E5441FE001E0935 /* GFBase32Utils.m */; };
+		044796D01E5441FE001E0935 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 044796C91E5441FE001E0935 /* GFGeoHash.m */; };
+		044796D11E5441FE001E0935 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 044796CB1E5441FE001E0935 /* GFGeoHashQuery.m */; };
+		044796D21E5441FE001E0935 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 044796CD1E5441FE001E0935 /* GFQuery.m */; };
+		044796D51E5D9AA0001E0935 /* GameAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044796D41E5D9AA0001E0935 /* GameAnnotation.swift */; };
+		044796D71E6404A1001E0935 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044796D61E6404A1001E0935 /* RoundedButton.swift */; };
 		046204131E1F65960096BA70 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046204121E1F65960096BA70 /* FeedVC.swift */; };
 		049467021E41E5F500147C50 /* AddGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049467011E41E5F500147C50 /* AddGameVC.swift */; };
 		0498694B1E35F744002CC562 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498694A1E35F744002CC562 /* CircleView.swift */; };
@@ -38,7 +46,26 @@
 /* Begin PBXFileReference section */
 		040442E91E42DA31002E7BB7 /* FancyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyLabel.swift; sourceTree = "<group>"; };
 		041A27931E4AEFBA000203AF /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		041A27951E4D79C8000203AF /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		0422099D1E1F614600D2BAF1 /* socialsports.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialsports.entitlements; sourceTree = "<group>"; };
+		044796BE1E5441FE001E0935 /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
+		044796BF1E5441FE001E0935 /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
+		044796C01E5441FE001E0935 /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
+		044796C11E5441FE001E0935 /* GFRegionQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegionQuery.h; sourceTree = "<group>"; };
+		044796C21E5441FE001E0935 /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
+		044796C41E5441FE001E0935 /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
+		044796C51E5441FE001E0935 /* GeoFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoFire.m; sourceTree = "<group>"; };
+		044796C61E5441FE001E0935 /* GFBase32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
+		044796C71E5441FE001E0935 /* GFBase32Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase32Utils.m; sourceTree = "<group>"; };
+		044796C81E5441FE001E0935 /* GFGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHash.h; sourceTree = "<group>"; };
+		044796C91E5441FE001E0935 /* GFGeoHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHash.m; sourceTree = "<group>"; };
+		044796CA1E5441FE001E0935 /* GFGeoHashQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
+		044796CB1E5441FE001E0935 /* GFGeoHashQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHashQuery.m; sourceTree = "<group>"; };
+		044796CC1E5441FE001E0935 /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
+		044796CD1E5441FE001E0935 /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
+		044796D31E54460D001E0935 /* socialsports-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "socialsports-Bridging-Header.h"; sourceTree = "<group>"; };
+		044796D41E5D9AA0001E0935 /* GameAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAnnotation.swift; sourceTree = "<group>"; };
+		044796D61E6404A1001E0935 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		046204121E1F65960096BA70 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		049467011E41E5F500147C50 /* AddGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameVC.swift; sourceTree = "<group>"; };
 		0498694A1E35F744002CC562 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -81,6 +108,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044796BC1E5441FE001E0935 /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				044796BD1E5441FE001E0935 /* API */,
+				044796C21E5441FE001E0935 /* GeoFire-Prefix.pch */,
+				044796C31E5441FE001E0935 /* Implementation */,
+			);
+			path = GeoFire;
+			sourceTree = "<group>";
+		};
+		044796BD1E5441FE001E0935 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				044796BE1E5441FE001E0935 /* GeoFire.h */,
+				044796BF1E5441FE001E0935 /* GFCircleQuery.h */,
+				044796C01E5441FE001E0935 /* GFQuery.h */,
+				044796C11E5441FE001E0935 /* GFRegionQuery.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		044796C31E5441FE001E0935 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				044796C41E5441FE001E0935 /* GeoFire+Private.h */,
+				044796C51E5441FE001E0935 /* GeoFire.m */,
+				044796C61E5441FE001E0935 /* GFBase32Utils.h */,
+				044796C71E5441FE001E0935 /* GFBase32Utils.m */,
+				044796C81E5441FE001E0935 /* GFGeoHash.h */,
+				044796C91E5441FE001E0935 /* GFGeoHash.m */,
+				044796CA1E5441FE001E0935 /* GFGeoHashQuery.h */,
+				044796CB1E5441FE001E0935 /* GFGeoHashQuery.m */,
+				044796CC1E5441FE001E0935 /* GFQuery+Private.h */,
+				044796CD1E5441FE001E0935 /* GFQuery.m */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 		04CAB33A1E1E7C110005C088 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +167,7 @@
 		04CAB3451E1E7C110005C088 /* socialsports */ = {
 			isa = PBXGroup;
 			children = (
+				044796BC1E5441FE001E0935 /* GeoFire */,
 				04F66D581E42E7C80044D331 /* Source */,
 				04EDC77D1E389BCC004DD1AD /* Services */,
 				0422099D1E1F614600D2BAF1 /* socialsports.entitlements */,
@@ -115,6 +181,7 @@
 				04CAB34D1E1E7C110005C088 /* Assets.xcassets */,
 				04CAB3521E1E7C110005C088 /* Info.plist */,
 				04CAB3581E1E7CD80005C088 /* GoogleService-Info.plist */,
+				044796D31E54460D001E0935 /* socialsports-Bridging-Header.h */,
 			);
 			path = socialsports;
 			sourceTree = "<group>";
@@ -124,6 +191,7 @@
 			children = (
 				04EDC7801E3B5715004DD1AD /* Game.swift */,
 				041A27931E4AEFBA000203AF /* Location.swift */,
+				044796D41E5D9AA0001E0935 /* GameAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -136,6 +204,7 @@
 				04FDCE611E363FC5005F8911 /* ProfileVC.swift */,
 				04EDC7821E3C7477004DD1AD /* SettingsVC.swift */,
 				049467011E41E5F500147C50 /* AddGameVC.swift */,
+				041A27951E4D79C8000203AF /* MapVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -151,6 +220,7 @@
 				04EDC7731E3763C9004DD1AD /* GameCell.swift */,
 				04EDC7841E3DCB34004DD1AD /* ProfileCell.swift */,
 				040442E91E42DA31002E7BB7 /* FancyLabel.swift */,
+				044796D61E6404A1001E0935 /* RoundedButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -331,9 +401,14 @@
 				0498694F1E35F7AD002CC562 /* FancyField.swift in Sources */,
 				04EDC77F1E389BEB004DD1AD /* DataService.swift in Sources */,
 				0498694B1E35F744002CC562 /* CircleView.swift in Sources */,
+				044796D11E5441FE001E0935 /* GFGeoHashQuery.m in Sources */,
 				04CAB3491E1E7C110005C088 /* SignInVC.swift in Sources */,
 				04EDC7741E3763C9004DD1AD /* GameCell.swift in Sources */,
+				041A27961E4D79C8000203AF /* MapVC.swift in Sources */,
+				044796CE1E5441FE001E0935 /* GeoFire.m in Sources */,
+				044796D51E5D9AA0001E0935 /* GameAnnotation.swift in Sources */,
 				04FDCE621E363FC5005F8911 /* ProfileVC.swift in Sources */,
+				044796CF1E5441FE001E0935 /* GFBase32Utils.m in Sources */,
 				04F66D5E1E42E7DB0044D331 /* StepCollectionViewFlowLayout.swift in Sources */,
 				049467021E41E5F500147C50 /* AddGameVC.swift in Sources */,
 				04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */,
@@ -342,11 +417,14 @@
 				04EDC7851E3DCB34004DD1AD /* ProfileCell.swift in Sources */,
 				04CAB3471E1E7C110005C088 /* AppDelegate.swift in Sources */,
 				041A27941E4AEFBA000203AF /* Location.swift in Sources */,
+				044796D01E5441FE001E0935 /* GFGeoHash.m in Sources */,
 				0498694D1E35F77B002CC562 /* FancyView.swift in Sources */,
 				04F66D5D1E42E7DB0044D331 /* DateTimePicker.swift in Sources */,
 				04EDC7721E3731C5004DD1AD /* PinkCircleView.swift in Sources */,
 				04CAB3601E1EACA70005C088 /* Constants.swift in Sources */,
 				04EDC7831E3C7477004DD1AD /* SettingsVC.swift in Sources */,
+				044796D21E5441FE001E0935 /* GFQuery.m in Sources */,
+				044796D71E6404A1001E0935 /* RoundedButton.swift in Sources */,
 				04F66D5C1E42E7DB0044D331 /* DateCollectionViewCell.swift in Sources */,
 				040442EA1E42DA31002E7BB7 /* FancyLabel.swift in Sources */,
 			);
@@ -419,6 +497,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "socialsports/socialsports-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -460,6 +539,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "socialsports/socialsports-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};

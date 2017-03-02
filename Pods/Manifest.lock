@@ -72,6 +72,7 @@ PODS:
   - GTMSessionFetcher/Full (1.1.8):
     - GTMSessionFetcher/Core (= 1.1.8)
   - LocationPickerViewController (3.0.0)
+  - SwiftDate (4.0.11)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
@@ -84,6 +85,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - LocationPickerViewController
+  - SwiftDate (~> 4.0)
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
@@ -106,8 +108,9 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   LocationPickerViewController: ee898cc76d9a06083b398c59e67d3c16aa298636
+  SwiftDate: a36d5ce7c86bed3ed92b583ccbf15045f374ac65
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: bc1a231f3f2007afb0f19b4f9e512013fdca7252
+PODFILE CHECKSUM: 61a5017fab22063a4d7cb2d44de70969a9298071
 
 COCOAPODS: 1.1.1

@@ -22,6 +22,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     var games = [Game]()
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation!
+    private var currentTime = Date()
     
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
@@ -46,7 +47,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             }
         }
         
-        DataService.ds.REF_GAMES.observe(.value, with: { (snapshot) in
+        let timeStampFormat = DateFormatter()
+        timeStampFormat.dateFormat = "YYYYMMddHHmm"
+        let currentTimeStamp = timeStampFormat.string(from: currentTime)
+        
+        DataService.ds.REF_GAMES.queryOrdered(byChild: "timeStamp").queryStarting(atValue: currentTimeStamp).observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
                 self.games = []
@@ -55,6 +60,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
                     print("SNAP: \(snap)")
                     if let gameDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
+                        
                         let game = Game(gameKey: key, postData: gameDict)
                         self.games.append(game)
                     }
@@ -104,6 +110,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
 
     @IBAction func addGameBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "goToAddGameVC", sender: nil)
+    }
+    @IBAction func mapBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToMap", sender: nil)
     }
     
     func locationAuthStatus() {

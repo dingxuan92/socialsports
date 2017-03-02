@@ -11,7 +11,7 @@ import LocationPickerViewController
 import Firebase
 import SwiftKeychainWrapper
 
-class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationPickerDelegate, LocationPickerDataSource{
+class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationPickerDelegate, LocationPickerDataSource, UITextFieldDelegate{
     
     @IBOutlet weak var titleField: FancyField!
     @IBOutlet weak var maxPlayersField: FancyField!
@@ -26,6 +26,9 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     var selectedImage = false
     private var latitude: Double!
     private var longitude: Double!
+    private var geoFire: GeoFire!
+    private var geoFireRef: FIRDatabaseReference!
+    private var timeStamp: String!
     
     var historyLocationList: [LocationItem] {
         get {
@@ -43,13 +46,27 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
+        
+        geoFireRef = DataService.ds.REF_MAP
+        geoFire = GeoFire(firebaseRef: geoFireRef)
+        
+        self.titleField.delegate = self
+        self.descriptionField.delegate = self
+        self.maxPlayersField.delegate = self
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddGameVC.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
 
     }
     
@@ -123,29 +140,35 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func addImageTapped(_ sender: Any) {
+    @IBAction private func addImageTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func dismissBtnPressed(_ sender: Any) {
+    @IBAction private func dismissBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func showDateTimePicker(sender: AnyObject) {
-        let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
-        let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
-        let picker = DateTimePicker.show(selected: current, minimumDate: min, maximumDate: max)
+//        let min = Date().addingTimeInterval(-60 * 60 * 24 * 1)
+        let max = Date().addingTimeInterval(60 * 60 * 24 * 8)
+        let picker = DateTimePicker.show(selected: current, minimumDate: current, maximumDate: max)
         picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
         picker.doneButtonTitle = "DONE"
         picker.todayButtonTitle = "Today"
         picker.completionHandler = { date in
             self.current = date
             let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/YYYY"
+            formatter.dateFormat = "YYYY/MM/dd"
             self.dateLbl.text = formatter.string(from: date)
+            
             let timeFormat = DateFormatter()
             timeFormat.dateFormat = "HH:mm"
             self.timeLbl.text = timeFormat.string(from: date)
+            
+            let timeStampFormat = DateFormatter()
+            timeStampFormat.dateFormat = "YYYYMMddHHmm"
+            self.timeStamp = timeStampFormat.string(from: date)
+            
         }
     }
     
@@ -198,7 +221,7 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         
     }
     
-    func postToFirebase(imgUrl: String) {
+    private func postToFirebase(imgUrl: String) {
         let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
         
         let post: Dictionary<String, AnyObject> = [
@@ -210,7 +233,8 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             "time": timeLbl.text! as AnyObject,
             "description": descriptionField.text! as AnyObject,
             "creator": uid! as AnyObject,
-            "attendance": 1 as AnyObject
+            "attendance": 1 as AnyObject,
+            "timeStamp" : timeStamp as AnyObject
         ]
         
         let attending: Dictionary<String, Bool> = [
@@ -223,17 +247,39 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             "latitude": latitude as AnyObject
         ]
         
+        let geoFireLoc = CLLocation(latitude: latitude, longitude: longitude)
+        
+        let firebaseUsers = DataService.ds.REF_USERS.child(uid!)
         let firebasePost = DataService.ds.REF_GAMES.childByAutoId()
+        
+        let key = firebasePost.key
+        
         firebasePost.setValue(post)
         firebasePost.child("attending").setValue(attending)
         firebasePost.child("location").setValue(location)
+        
+        firebaseUsers.child("gamesAccepted").updateChildValues([key : true]) //store into creator's games he's going
+        
+        createSighting(forLocation: geoFireLoc, withGameID: key)
         selectedImage = false
         self.dismiss(animated: true, completion: nil)
         
-        
     }
     
+    //Calls this function when the tap is recognized.
+    @objc private func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    private func createSighting(forLocation location:CLLocation, withGameID geoId: String) {
+        geoFire.setLocation(location, forKey: "\(geoId)")
+    }
+    
     
 }
