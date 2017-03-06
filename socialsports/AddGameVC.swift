@@ -174,15 +174,18 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     @IBAction func createGameBtnPressed(_ sender: Any) {
         guard let title = titleField.text, title != "" else {
+            alertTheUser(title: "Title is required", message: "Please choose a title for your game")
             print("DING: Title must be entered")
             return
         }
         //image
         guard let image = imageAdd.image, selectedImage == true else {
+            alertTheUser(title: "An image is required", message: "Please choose an image for your game")
             print("DING: Image must be added")
             return
         }
         guard let date = dateLbl.text, date != "" else {
+            alertTheUser(title: "Date and time is required", message: "Please indicate the time and date for your game")
             print("DING: Date must be entered")
             return
         }
@@ -191,10 +194,12 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             return
         }
         guard let location = locationLbl.text , location != "" else {
+            alertTheUser(title: "Location is required", message: "Please choose a location for your game")
             print("DING: Location must be entered")
             return
         }
         guard let maxPlayers = maxPlayersField.text, maxPlayers != "" else {
+            alertTheUser(title: "Max players is required", message: "Please indicate the max players for your game")
             print("DING: Max players must be entered")
             return
         }
@@ -279,6 +284,13 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     private func createSighting(forLocation location:CLLocation, withGameID geoId: String) {
         geoFire.setLocation(location, forKey: "\(geoId)")
+    }
+    
+    private func alertTheUser(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
     }
     
     

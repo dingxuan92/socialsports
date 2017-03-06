@@ -20,6 +20,9 @@ class Game {
     private var _description: String!
     private var _location: String!
     private var _maxppl: String!
+    private var _date: String!
+    private var _time: String!
+    private var _timeStamp: String!
     private var _gameRef: FIRDatabaseReference!
     
     var title: String {
@@ -58,6 +61,18 @@ class Game {
         return _gameKey
     }
     
+    var date: String {
+        return _date
+    }
+    
+    var time: String {
+        return _time
+    }
+    
+    var timeStamp: String {
+        return _timeStamp
+    }
+    
     init(title: String, likes: Int, imageUrl: String) {
         self._title = title
         self._likes = likes
@@ -89,6 +104,24 @@ class Game {
         
         if let creator = postData["creator"] as? String {
             self._creator = creator
+        }
+        
+        if let location = postData["location"] as? Dictionary<String, AnyObject> {
+            if let loc = location["name"] as? String {
+                self._location = loc
+            }
+        }
+        
+        if let date = postData["date"] as? String {
+            self._date = date
+        }
+        
+        if let time = postData["time"] as? String {
+            self._time = time
+        }
+        
+        if let timeStamp = postData["timeStamp"] as? String {
+            self._timeStamp = timeStamp
         }
         
         _gameRef = DataService.ds.REF_GAMES.child(gameKey)

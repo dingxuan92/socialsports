@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwiftDate
+import SwiftKeychainWrapper
 import CoreLocation
 
 class GameCell: UITableViewCell {
@@ -23,6 +24,7 @@ class GameCell: UITableViewCell {
     @IBOutlet weak var numPlayersLbl: UILabel!
     @IBOutlet weak var distanceLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var acceptButton: UIButton!
     
     private var game: Game!
     
@@ -30,6 +32,8 @@ class GameCell: UITableViewCell {
     private var likesRef: FIRDatabaseReference!
     private var userRef: FIRDatabaseReference!
     private var gameRef: FIRDatabaseReference!
+    
+    let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
     
     
     override func awakeFromNib() {
@@ -42,10 +46,16 @@ class GameCell: UITableViewCell {
         blurView.addSubview(blurEffectView)
         blurView.bringSubview(toFront: titleLbl)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
-        tap.numberOfTapsRequired = 1            //hard code the gesture recognizer because table view cell, storyboard linking cannot differentiate which cell
-        likeImg.addGestureRecognizer(tap)
+        let likeTap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        likeTap.numberOfTapsRequired = 1            //hard code the gesture recognizer because table view cell, storyboard linking cannot differentiate which cell
+        likeImg.addGestureRecognizer(likeTap)
         likeImg.isUserInteractionEnabled = true
+        
+        let acceptTap = UITapGestureRecognizer(target: self, action: #selector(acceptTapped))
+        acceptTap.numberOfTapsRequired = 1
+        acceptButton.addGestureRecognizer(acceptTap)
+        acceptButton.isUserInteractionEnabled = true
+        
         
     }
     
@@ -120,6 +130,8 @@ class GameCell: UITableViewCell {
             })
         }
         
+        //Determine if the event is liked by the current user
+        
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
                 self.likeImg.image = UIImage(named: "unfilledStar")
@@ -128,9 +140,19 @@ class GameCell: UITableViewCell {
             }
         })
         
+        //Determine if the event is accepted by the current user
+        DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").child(game.gameKey).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.acceptButton.setImage(UIImage(named: "acceptButton"), for: .normal)
+            } else {
+                self.acceptButton.setImage(UIImage(named: "acceptedButton"), for: .normal)
+            }
+        })
+        
+        
     }
     
-    func likeTapped(sender: UITapGestureRecognizer) {
+    @objc private func likeTapped(sender: UITapGestureRecognizer) {
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
                 self.likeImg.image = UIImage(named: "filledStar")
@@ -144,6 +166,22 @@ class GameCell: UITableViewCell {
         })
         
     }
+    
+    @objc private func acceptTapped(sender: UITapGestureRecognizer) {
+        DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").child(game.gameKey).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.acceptButton.setImage(UIImage(named: "acceptedButton"), for: .normal)
+                DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").child(self.game.gameKey).setValue(true)
+                DataService.ds.REF_GAMES.child(self.game.gameKey).child("attending").child(self.uid!).setValue(true)
+            } else {
+                self.acceptButton.setImage(UIImage(named: "acceptButton"), for: .normal)
+                DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").child(self.game.gameKey).removeValue()
+                DataService.ds.REF_GAMES.child(self.game.gameKey).child("attending").child(self.uid!).removeValue()
+            }
+        })
+    }
+    
+    
     
 }
 

@@ -89,12 +89,32 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         return games.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell: GameCell = tableView.cellForRow(at: indexPath) as! GameCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.none //to remove the selected gray background
+        
+        let selectedGame = games[indexPath.row]
+        
+        performSegue(withIdentifier: "FeedToGameDetail", sender: selectedGame)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FeedToGameDetail" {
+            if let detailVC = segue.destination as? GameDetailVC {
+                if let game = sender as? Game {
+                    detailVC.selectedGame = game
+                }
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let game = games[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameCell {
             if let img = FeedVC.imageCache.object(forKey: game.imageUrl as NSString) {
                 cell.configureCell(game: game, img: img)
+                
                 return cell
             }
             cell.configureCell(game: game)
@@ -125,6 +145,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             locationAuthStatus()
         }
     }
+    
 
 
 
