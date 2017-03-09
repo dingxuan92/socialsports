@@ -22,6 +22,7 @@ class DataService {
     private var _REF_GAMES = DB_BASE.child("game")
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_MAP = DB_BASE.child("map")
+    private var _REF_MESSAGE = DB_BASE.child("message")
     
     // Storage references
     
@@ -46,6 +47,10 @@ class DataService {
         return _REF_MAP
     }
     
+    var REF_MESSAGE: FIRDatabaseReference {
+        return _REF_MESSAGE
+    }
+    
     var REF_USERS_CURRENT: FIRDatabaseReference {
         let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
         let user = REF_USERS.child(uid!)
@@ -66,6 +71,7 @@ class DataService {
     
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, AnyObject>) {
         REF_USERS.child(uid).child("profile").updateChildValues(userData)
+        print("user profile posted to firebase")
         //if uid dosn't exist in database, it will create a new one for the uid
     }
     

@@ -13,6 +13,10 @@
 		0432BAF81E693EBB004169FE /* CoolTransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432BAF71E693EBB004169FE /* CoolTransparentView.swift */; };
 		0432BAFC1E6AF19A004169FE /* DetailProfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432BAFB1E6AF19A004169FE /* DetailProfCell.swift */; };
 		0432BAFE1E6B1010004169FE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432BAFD1E6B1010004169FE /* Profile.swift */; };
+		0432BB021E6FAE19004169FE /* CoolLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432BB011E6FAE19004169FE /* CoolLabel.swift */; };
+		0432BB041E6FE42E004169FE /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432BB031E6FE42E004169FE /* ChatCell.swift */; };
+		0432BB061E6FE6FE004169FE /* CoolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432BB051E6FE6FE004169FE /* CoolField.swift */; };
+		0432BB081E7009B6004169FE /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432BB071E7009B6004169FE /* Chat.swift */; };
 		044796CE1E5441FE001E0935 /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 044796C51E5441FE001E0935 /* GeoFire.m */; };
 		044796CF1E5441FE001E0935 /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 044796C71E5441FE001E0935 /* GFBase32Utils.m */; };
 		044796D01E5441FE001E0935 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 044796C91E5441FE001E0935 /* GFGeoHash.m */; };
@@ -55,6 +59,10 @@
 		0432BAF71E693EBB004169FE /* CoolTransparentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolTransparentView.swift; sourceTree = "<group>"; };
 		0432BAFB1E6AF19A004169FE /* DetailProfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProfCell.swift; sourceTree = "<group>"; };
 		0432BAFD1E6B1010004169FE /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		0432BB011E6FAE19004169FE /* CoolLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolLabel.swift; sourceTree = "<group>"; };
+		0432BB031E6FE42E004169FE /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		0432BB051E6FE6FE004169FE /* CoolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolField.swift; sourceTree = "<group>"; };
+		0432BB071E7009B6004169FE /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		044796BE1E5441FE001E0935 /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
 		044796BF1E5441FE001E0935 /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
 		044796C01E5441FE001E0935 /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
@@ -201,6 +209,7 @@
 				041A27931E4AEFBA000203AF /* Location.swift */,
 				044796D41E5D9AA0001E0935 /* GameAnnotation.swift */,
 				0432BAFD1E6B1010004169FE /* Profile.swift */,
+				0432BB071E7009B6004169FE /* Chat.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -233,6 +242,9 @@
 				044796D61E6404A1001E0935 /* RoundedButton.swift */,
 				0432BAF71E693EBB004169FE /* CoolTransparentView.swift */,
 				0432BAFB1E6AF19A004169FE /* DetailProfCell.swift */,
+				0432BB011E6FAE19004169FE /* CoolLabel.swift */,
+				0432BB031E6FE42E004169FE /* ChatCell.swift */,
+				0432BB051E6FE6FE004169FE /* CoolField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -426,9 +438,13 @@
 				049467021E41E5F500147C50 /* AddGameVC.swift in Sources */,
 				04CAB3621E1EAE800005C088 /* CoolBtn.swift in Sources */,
 				046204131E1F65960096BA70 /* FeedVC.swift in Sources */,
+				0432BB081E7009B6004169FE /* Chat.swift in Sources */,
 				04EDC7811E3B5715004DD1AD /* Game.swift in Sources */,
 				04EDC7851E3DCB34004DD1AD /* ProfileCell.swift in Sources */,
+				0432BB041E6FE42E004169FE /* ChatCell.swift in Sources */,
+				0432BB061E6FE6FE004169FE /* CoolField.swift in Sources */,
 				04CAB3471E1E7C110005C088 /* AppDelegate.swift in Sources */,
+				0432BB021E6FAE19004169FE /* CoolLabel.swift in Sources */,
 				0432BAFE1E6B1010004169FE /* Profile.swift in Sources */,
 				041A27941E4AEFBA000203AF /* Location.swift in Sources */,
 				044796D01E5441FE001E0935 /* GFGeoHash.m in Sources */,

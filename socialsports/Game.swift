@@ -86,6 +86,10 @@ class Game {
             self._title = title
         }
         
+        if let description = postData["description"] as? String {
+            self._description = description
+        }
+        
         if let likes = postData["likes"] as? Int {
             self._likes = likes
         }

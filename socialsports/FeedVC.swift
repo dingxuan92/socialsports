@@ -18,11 +18,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     @IBOutlet weak var profileImg: CircleView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+
     
     var games = [Game]()
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation!
     private var currentTime = Date()
+    private lazy var FeedRef: FIRDatabaseReference = DataService.ds.REF_GAMES
+    private var FeedRefHandle: FIRDatabaseHandle?
     
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
@@ -46,29 +49,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
                 userName.text = name
             }
         }
-        
-        let timeStampFormat = DateFormatter()
-        timeStampFormat.dateFormat = "YYYYMMddHHmm"
-        let currentTimeStamp = timeStampFormat.string(from: currentTime)
-        
-        DataService.ds.REF_GAMES.queryOrdered(byChild: "timeStamp").queryStarting(atValue: currentTimeStamp).observe(.value, with: { (snapshot) in
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                self.games = []
-                
-                for snap in snapshot {
-                    print("SNAP: \(snap)")
-                    if let gameDict = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        
-                        let game = Game(gameKey: key, postData: gameDict)
-                        self.games.append(game)
-                    }
-                }
-            }
-            self.tableView.reloadData()
-        })
-        
+        observeFeed()
+    }
+    
+    deinit {
+        if let refHandle = FeedRefHandle {
+            FeedRef.removeObserver(withHandle: refHandle)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -144,6 +131,32 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             locationManager.requestWhenInUseAuthorization()
             locationAuthStatus()
         }
+    }
+    
+    private func observeFeed() {
+        
+        let timeStampFormat = DateFormatter()
+        timeStampFormat.dateFormat = "YYYYMMddHHmm"
+        let currentTimeStamp = timeStampFormat.string(from: currentTime)
+        
+        FeedRefHandle = FeedRef.queryOrdered(byChild: "timeStamp").queryStarting(atValue: currentTimeStamp).observe(.value, with: { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                self.games = []
+                
+                for snap in snapshot {
+                    print("SNAP: \(snap)")
+                    if let gameDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        
+                        let game = Game(gameKey: key, postData: gameDict)
+                        self.games.append(game)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        })
+        
     }
     
 

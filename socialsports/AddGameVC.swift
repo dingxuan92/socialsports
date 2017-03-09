@@ -98,8 +98,6 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         storeLocation(locationItem: locationItem)
     }
     
-    
-    
     // Location Picker Data Source
     
     func numberOfAlternativeLocations() -> Int {
@@ -222,8 +220,6 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 
             }
         }
-        
-        
     }
     
     private func postToFirebase(imgUrl: String) {
@@ -292,6 +288,4 @@ class AddGameVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
-    
-    
 }

@@ -28,22 +28,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileTableView.delegate = self
-        profileTableView.dataSource = self
+        updateMainUI()
         
-        profileRef = DataService.ds.REF_USERS_CURRENT
-
-        profileRef.observeSingleEvent(of: .value, with: { snapshot in
-            
-            if !snapshot.exists() { return }
-            
-            if let provider = snapshot.childSnapshot(forPath: "profile/provider").value as! String! {
-                if provider == "facebook.com" {
-                    print("yes it is facebook")
-                    self.returnUserData()
-                }
-            }
-        })
     }
     
     override internal var prefersStatusBarHidden: Bool {
@@ -131,8 +117,26 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             })
         }
+    }
+    
+    private func updateMainUI() {
         
+        profileTableView.delegate = self
+        profileTableView.dataSource = self
         
+        profileRef = DataService.ds.REF_USERS_CURRENT
+        
+        profileRef.observeSingleEvent(of: .value, with: { snapshot in
+            
+            if !snapshot.exists() { return }
+            
+            if let provider = snapshot.childSnapshot(forPath: "profile/provider").value as! String! {
+                if provider == "facebook.com" {
+                    print("yes it is facebook")
+                    self.returnUserData()
+                }
+            }
+        })
     }
     
     @IBAction func addGameBtnPressed(_ sender: Any) {

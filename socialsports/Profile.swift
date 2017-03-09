@@ -15,15 +15,15 @@ class Profile {
     private var _imageUrl: String!
     private var _userKey: String!
     
-    var name: String! {
+    var name: String {
         return _name
     }
     
-    var imageUrl: String! {
+    var imageUrl: String {
         return _imageUrl
     }
     
-    var userKey: String! {
+    var userKey: String {
         return _userKey
     }
     
