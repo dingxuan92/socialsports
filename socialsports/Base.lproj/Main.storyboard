@@ -123,7 +123,7 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lee Kwang Soo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="far-gp-vtV">
-                                        <rect key="frame" x="56" y="13.5" width="124" height="23.5"/>
+                                        <rect key="frame" x="56" y="13" width="124" height="24"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -576,7 +576,7 @@
                                             <constraint firstAttribute="height" constant="1" id="9at-aI-y1p"/>
                                         </constraints>
                                     </imageView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pwG-TD-rKw">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pwG-TD-rKw">
                                         <rect key="frame" x="0.0" y="247" width="375" height="320"/>
                                         <color key="backgroundColor" red="0.23529411764705882" green="0.30588235294117649" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
@@ -584,7 +584,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p7p-fb-9fh" id="nug-cd-Qi8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccer1" translatesAutoresizingMaskIntoConstraints="NO" id="yhS-mI-zFN">
@@ -614,19 +614,19 @@
                                                             </constraints>
                                                         </view>
                                                         <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkN-k2-Tf9">
-                                                            <rect key="frame" x="0.0" y="165" width="375" height="35"/>
+                                                            <rect key="frame" x="0.0" y="164" width="375" height="35"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="agz-JE-slW">
-                                                                    <rect key="frame" x="4.5" y="5" width="366" height="25"/>
+                                                                    <rect key="frame" x="4" y="5" width="367" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today at 18:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqS-H7-dyw">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="25"/>
                                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                                             <color key="textColor" red="0.078431372550000003" green="0.15686274510000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deyi Secondary School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82e-Dj-xJ0">
-                                                                            <rect key="frame" x="179.5" y="0.0" width="186.5" height="25"/>
+                                                                            <rect key="frame" x="180" y="0.0" width="187" height="25"/>
                                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                                             <color key="textColor" red="0.078431372550000003" green="0.15686274510000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -716,6 +716,7 @@
                         <segue destination="ot1-f8-7GU" kind="show" identifier="goToSettings" id="sVD-k3-8Vo"/>
                         <segue destination="lJu-HV-HL9" kind="show" identifier="profileToAddGame" id="BZ4-gu-jLC"/>
                         <segue destination="y6c-28-pYi" kind="show" identifier="ProfileToFeed" id="l78-EU-e0l"/>
+                        <segue destination="LA2-r1-02g" kind="show" identifier="ProfileToGame" id="alj-gy-RSH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hw-XI-Csw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -738,7 +739,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBf-j3-HGb">
-                                        <rect key="frame" x="129" y="11.5" width="117" height="27.5"/>
+                                        <rect key="frame" x="129" y="11" width="117" height="28"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -754,12 +755,16 @@
                                             <action selector="backBtnPressed:" destination="LA2-r1-02g" eventType="touchUpInside" id="zlj-uh-Rr9"/>
                                         </connections>
                                     </button>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EditButton" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-z1-4eZ">
+                                    <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EditButton" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-z1-4eZ">
                                         <rect key="frame" x="302" y="13" width="60" height="25"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="NRW-Cr-09d"/>
                                             <constraint firstAttribute="width" constant="60" id="kfG-eR-IFc"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="4R6-9A-U44" appends="YES" id="AjD-am-iut"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1053,14 +1058,32 @@
                                             <constraint firstAttribute="height" constant="1" id="zOX-9q-I5c"/>
                                         </constraints>
                                     </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXf-bg-LoN">
+                                        <rect key="frame" x="38" y="335" width="300" height="50"/>
+                                        <color key="backgroundColor" red="0.66666666669999997" green="0.74509803919999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="UmX-F8-gk3"/>
+                                            <constraint firstAttribute="height" constant="50" id="fwP-rx-aiW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                        <state key="normal" title="Delete Game">
+                                            <color key="titleColor" red="0.17116323089999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="DeleteBtnPressed:" destination="LA2-r1-02g" eventType="touchUpInside" id="X9i-3q-0bI"/>
+                                            <action selector="createGameBtnPressed:" destination="lJu-HV-HL9" eventType="touchUpInside" id="j3n-gI-h5l"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.30588235289999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Kba-qL-COV" firstAttribute="top" secondItem="HdG-QR-64P" secondAttribute="bottom" id="29q-2D-BBo"/>
                                     <constraint firstItem="TUX-lL-OTa" firstAttribute="top" secondItem="Kba-qL-COV" secondAttribute="bottom" id="3RY-J0-n3k"/>
+                                    <constraint firstItem="sXf-bg-LoN" firstAttribute="top" secondItem="TUX-lL-OTa" secondAttribute="bottom" constant="30" id="5rb-RM-gtf"/>
                                     <constraint firstAttribute="trailing" secondItem="VdV-PN-bSi" secondAttribute="trailing" id="CbP-fY-lIO"/>
                                     <constraint firstItem="ToU-Cd-9l9" firstAttribute="leading" secondItem="2TH-TL-anZ" secondAttribute="leading" constant="12" id="Cse-fu-Glu"/>
                                     <constraint firstItem="oj0-BC-awJ" firstAttribute="leading" secondItem="2TH-TL-anZ" secondAttribute="leading" id="Deg-yo-DG3"/>
+                                    <constraint firstItem="sXf-bg-LoN" firstAttribute="centerX" secondItem="2TH-TL-anZ" secondAttribute="centerX" id="F8H-25-SE3"/>
                                     <constraint firstItem="9js-nE-Zsa" firstAttribute="trailing" secondItem="bDr-0G-Hr9" secondAttribute="trailing" id="FsT-Fx-i89"/>
                                     <constraint firstAttribute="trailing" secondItem="Kba-qL-COV" secondAttribute="trailing" id="IIh-lT-5jB"/>
                                     <constraint firstItem="HdG-QR-64P" firstAttribute="leading" secondItem="2TH-TL-anZ" secondAttribute="leading" id="S1P-C9-yb2"/>
@@ -1100,15 +1123,18 @@
                     </view>
                     <connections>
                         <outlet property="attendanceLbl" destination="djw-zV-Eaw" id="KAh-W2-NKh"/>
+                        <outlet property="chatSendImage" destination="bDr-0G-Hr9" id="hcP-a7-Cod"/>
                         <outlet property="chatTableView" destination="1B8-9J-suq" id="5BE-hQ-Jev"/>
                         <outlet property="chatTextField" destination="ToU-Cd-9l9" id="Uwz-lh-YkE"/>
                         <outlet property="collection" destination="TUX-lL-OTa" id="onh-cv-XHD"/>
+                        <outlet property="deleteGameBtn" destination="sXf-bg-LoN" id="Opp-ek-yOD"/>
                         <outlet property="editLbl" destination="cfv-z1-4eZ" id="KFE-wM-GeH"/>
                         <outlet property="gameBlurView" destination="VdV-PN-bSi" id="RYf-hc-5Wf"/>
                         <outlet property="gameDate" destination="I7w-ei-oMI" id="LSN-wy-kBa"/>
                         <outlet property="gameImg" destination="oru-BU-gJ5" id="OZz-Gk-e28"/>
                         <outlet property="gameLocation" destination="3Da-ky-cju" id="iM9-pw-Tzl"/>
                         <outlet property="gameTitle" destination="rJ5-Oj-Fzp" id="CTl-g2-1EX"/>
+                        <outlet property="lineView" destination="9js-nE-Zsa" id="3Mk-OP-dHT"/>
                         <outlet property="titleBlurView" destination="VdV-PN-bSi" id="jsF-1D-8cf"/>
                         <segue destination="y6c-28-pYi" kind="show" identifier="DetailToFeed" id="9Oh-Ha-lxQ"/>
                         <segue destination="opl-fS-WaN" kind="show" identifier="DetailToMap" id="XKq-jl-Qbj"/>
@@ -1119,6 +1145,11 @@
                 <tapGestureRecognizer id="xs3-O0-WK0">
                     <connections>
                         <action selector="chatBtnTapped:" destination="LA2-r1-02g" id="Pau-7V-w4t"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="4R6-9A-U44">
+                    <connections>
+                        <action selector="editBtnPressed:" destination="LA2-r1-02g" id="fK1-7h-LW2"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1153,7 +1184,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a Game " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v09-PU-X3r">
-                                        <rect key="frame" x="114.5" y="11.5" width="146.5" height="27.5"/>
+                                        <rect key="frame" x="114" y="11" width="147" height="28"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1556,7 +1587,7 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lee Kwang Soo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-af-pp4">
-                                        <rect key="frame" x="56" y="13.5" width="124" height="23.5"/>
+                                        <rect key="frame" x="56" y="13" width="124" height="24"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1676,8 +1707,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XxB-Vf-b1n"/>
-        <segue reference="9Oh-Ha-lxQ"/>
+        <segue reference="l78-EU-e0l"/>
+        <segue reference="BZ4-gu-jLC"/>
+        <segue reference="alj-gy-RSH"/>
         <segue reference="XKq-jl-Qbj"/>
-        <segue reference="FoI-6c-6tx"/>
     </inferredMetricsTieBreakers>
 </document>

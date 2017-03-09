@@ -21,15 +21,33 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var profilePlayed: UILabel!
     @IBOutlet weak var profileGender: UIImageView!
     
-    var profileRef: FIRDatabaseReference!
-    var profilePicRef: FIRStorageReference!
-    
+    private var profileRef: FIRDatabaseReference!
+    private var profilePicRef: FIRStorageReference!
+    var games = [Game]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateMainUI()
+        observeGames()
+    }
+    
+    private func observeGames() {
         
+        DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                self.games = []
+                
+                for snap in snapshot {
+                        let key = snap.key
+                        let game = Game(gameKey: key)
+                        self.games.insert(game, at: 0)
+                }
+            }
+            
+            self.profileTableView.reloadData()
+        })
     }
     
     override internal var prefersStatusBarHidden: Bool {
@@ -49,11 +67,38 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return games.count
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileCell
+        
+        let game = games[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as? ProfileCell {
+            cell.configureCell(game: game)
+            return cell
+        } else {
+            return ProfileCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell: ProfileCell = tableView.cellForRow(at: indexPath) as! ProfileCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.none //to remove the selected gray background
+        
+        let selectedGame = games[indexPath.row]
+        
+        performSegue(withIdentifier: "ProfileToGame", sender: selectedGame)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProfileToGame" {
+            if let detailVC = segue.destination as? GameDetailVC {
+                if let game = sender as? Game {
+                    detailVC.selectedGame = game
+                }
+            }
+        }
     }
     
     private func returnUserData() {

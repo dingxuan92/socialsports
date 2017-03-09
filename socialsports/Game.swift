@@ -79,6 +79,10 @@ class Game {
         self._imageUrl = imageUrl
     }
     
+    init(gameKey: String) {
+        self._gameKey = gameKey
+    }
+    
     init(gameKey: String, postData: Dictionary<String, AnyObject>) {
         self._gameKey = gameKey
         

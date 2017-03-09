@@ -26,10 +26,14 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var chatTextField: FancyField!
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var editLbl: UIImageView!
+    @IBOutlet weak var chatSendImage: UIImageView!
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var deleteGameBtn: UIButton!
     
     
     var profiles = [Profile]()
     var chats = [Chat]()
+    var edit = false
     private var profileRefHandle: FIRDatabaseHandle?
     private var chatRefHandle: FIRDatabaseHandle?
     
@@ -50,6 +54,7 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         updateMainUI()
         observeProfile()
         observeChat()
+        checkIfCreator()
     }
     
     deinit {
@@ -203,6 +208,34 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         }
         postToFirebase(text: message)
     }
+    @IBAction func editBtnPressed(_ sender: Any) {
+        if edit == false {
+            editLbl.image = UIImage(named: "EditingButton")
+            edit = true
+            
+            chatTableView.isHidden = true
+            chatTextField.isHidden = true
+            chatSendImage.isHidden = true
+            lineView.isHidden = true
+            deleteGameBtn.isHidden = false
+            
+        } else {
+            editLbl.image = UIImage(named: "EditButton")
+            edit = false
+            
+            chatTableView.isHidden = false
+            chatTextField.isHidden = false
+            chatSendImage.isHidden = false
+            lineView.isHidden = false
+            deleteGameBtn.isHidden = true
+        }
+    }
+    
+    @IBAction func DeleteBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        DataService.ds.REF_GAMES.child(selectedGame.gameKey).removeValue()
+        
+    }
     
     private func postToFirebase(text: String) {
         
@@ -232,18 +265,10 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         DataService.ds.REF_GAMES.child(gameKey).observeSingleEvent(of: .value, with: { (snapshot) in
             if let creatorID = snapshot.childSnapshot(forPath: "creator").value as? String {
                 if creatorID == uid {
-                    
+                    self.editLbl.isHidden = false
                 }
             }
             
         })
     }
-    
-//    if !snapshot.exists() { return }
-//    
-//    if let provider = snapshot.childSnapshot(forPath: "profile/provider").value as! String! {
-//        if provider == "facebook.com" {
-//            print("yes it is facebook")
-//            self.returnUserData()
-    
 }
