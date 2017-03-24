@@ -101,7 +101,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    private func returnUserData() {
+    private func returnFbUserData() {
         
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email, locale"]).start(completionHandler: { (connection, result, error) -> Void in
@@ -178,7 +178,21 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let provider = snapshot.childSnapshot(forPath: "profile/provider").value as! String! {
                 if provider == "facebook.com" {
                     print("yes it is facebook")
-                    self.returnUserData()
+                    self.returnFbUserData()
+                    let numberPlayed = snapshot.childSnapshot(forPath: "gamesAccepted").childrenCount
+                    self.profilePlayed.text = "\(numberPlayed)"
+                } else {
+                    if let user = FIRAuth.auth()?.currentUser {
+                        if let photoURL = user.photoURL {
+                            let data = NSData(contentsOf: photoURL)
+                            self.profileImage.image = UIImage(data: data as! Data)
+                        }
+                        if let name = user.displayName {
+                            self.profileName.text = name
+                        }
+                    }
+                    let numberPlayed = snapshot.childSnapshot(forPath: "gamesAccepted").childrenCount
+                    self.profilePlayed.text = "\(numberPlayed)"
                 }
             }
         })

@@ -123,7 +123,7 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lee Kwang Soo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="far-gp-vtV">
-                                        <rect key="frame" x="56" y="13" width="124" height="24"/>
+                                        <rect key="frame" x="56" y="13.5" width="124" height="23.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -559,7 +559,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs5-Uo-dmA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs5-Uo-dmA">
                                         <rect key="frame" x="71" y="198" width="234" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="fCk-Gl-3Fg"/>
@@ -617,16 +617,16 @@
                                                             <rect key="frame" x="0.0" y="164" width="375" height="35"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="agz-JE-slW">
-                                                                    <rect key="frame" x="4" y="5" width="367" height="25"/>
+                                                                    <rect key="frame" x="4.5" y="5" width="366" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today at 18:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqS-H7-dyw">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="25"/>
                                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                                             <color key="textColor" red="0.078431372550000003" green="0.15686274510000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deyi Secondary School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82e-Dj-xJ0">
-                                                                            <rect key="frame" x="180" y="0.0" width="187" height="25"/>
+                                                                            <rect key="frame" x="179.5" y="0.0" width="186.5" height="25"/>
                                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                                             <color key="textColor" red="0.078431372550000003" green="0.15686274510000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -739,7 +739,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBf-j3-HGb">
-                                        <rect key="frame" x="129" y="11" width="117" height="28"/>
+                                        <rect key="frame" x="129" y="11.5" width="117" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -766,6 +766,17 @@
                                             <outletCollection property="gestureRecognizers" destination="4R6-9A-U44" appends="YES" id="AjD-am-iut"/>
                                         </connections>
                                     </imageView>
+                                    <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="acceptBtn" translatesAutoresizingMaskIntoConstraints="NO" id="q30-v0-hXg">
+                                        <rect key="frame" x="295" y="13" width="60" height="25"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="c1c-4P-NSz"/>
+                                            <constraint firstAttribute="width" constant="60" id="njB-cx-cXC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="EZi-ib-j4I" appends="YES" id="Xe1-e2-x54"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -773,6 +784,8 @@
                                     <constraint firstAttribute="height" constant="50" id="LPN-2p-Eze"/>
                                     <constraint firstItem="TI1-Ge-eto" firstAttribute="top" secondItem="dEy-la-ns7" secondAttribute="top" constant="15" id="PWd-x0-58I"/>
                                     <constraint firstItem="uBf-j3-HGb" firstAttribute="centerX" secondItem="dEy-la-ns7" secondAttribute="centerX" id="QH5-Rr-xsp"/>
+                                    <constraint firstItem="q30-v0-hXg" firstAttribute="centerY" secondItem="uBf-j3-HGb" secondAttribute="centerY" id="VnX-5P-f9S"/>
+                                    <constraint firstAttribute="trailing" secondItem="q30-v0-hXg" secondAttribute="trailing" constant="20" id="bBk-dG-dHK"/>
                                     <constraint firstAttribute="trailing" secondItem="cfv-z1-4eZ" secondAttribute="trailing" constant="13" id="fEG-hE-lXS"/>
                                     <constraint firstItem="TI1-Ge-eto" firstAttribute="leading" secondItem="dEy-la-ns7" secondAttribute="leading" constant="15" id="kev-Ke-mdM"/>
                                     <constraint firstItem="cfv-z1-4eZ" firstAttribute="centerY" secondItem="uBf-j3-HGb" secondAttribute="centerY" id="qcA-JZ-MMw"/>
@@ -1122,6 +1135,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="acceptBtn" destination="q30-v0-hXg" id="ipu-cJ-vF4"/>
                         <outlet property="attendanceLbl" destination="djw-zV-Eaw" id="KAh-W2-NKh"/>
                         <outlet property="chatSendImage" destination="bDr-0G-Hr9" id="hcP-a7-Cod"/>
                         <outlet property="chatTableView" destination="1B8-9J-suq" id="5BE-hQ-Jev"/>
@@ -1150,6 +1164,11 @@
                 <tapGestureRecognizer id="4R6-9A-U44">
                     <connections>
                         <action selector="editBtnPressed:" destination="LA2-r1-02g" id="fK1-7h-LW2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="EZi-ib-j4I">
+                    <connections>
+                        <action selector="acceptBtnTapped:" destination="LA2-r1-02g" id="Mpt-I0-671"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1184,7 +1203,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a Game " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v09-PU-X3r">
-                                        <rect key="frame" x="114" y="11" width="147" height="28"/>
+                                        <rect key="frame" x="114.5" y="11.5" width="146.5" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1473,10 +1492,18 @@
                                             <action selector="crossButtonPressed:" destination="ot1-f8-7GU" eventType="touchUpInside" id="M5p-mv-VPl"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWw-aj-1MQ">
+                                        <rect key="frame" x="141" y="9" width="93" height="33"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="UWw-aj-1MQ" firstAttribute="centerY" secondItem="Lsj-IJ-YnT" secondAttribute="centerY" id="HsM-w4-zU2"/>
                                     <constraint firstItem="siB-Xx-DYs" firstAttribute="top" secondItem="Lsj-IJ-YnT" secondAttribute="top" constant="10" id="Uc1-SK-pOB"/>
+                                    <constraint firstItem="UWw-aj-1MQ" firstAttribute="centerX" secondItem="Lsj-IJ-YnT" secondAttribute="centerX" id="fNh-f9-Jfk"/>
                                     <constraint firstItem="siB-Xx-DYs" firstAttribute="leading" secondItem="Lsj-IJ-YnT" secondAttribute="leading" constant="20" id="hyl-N5-4p0"/>
                                     <constraint firstAttribute="height" constant="50" id="ikN-K7-XbM"/>
                                 </constraints>
@@ -1499,11 +1526,62 @@
                                             <action selector="signOutBtnPressed:" destination="ot1-f8-7GU" eventType="touchUpInside" id="pIS-Zx-XWl"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-8R-3AR">
+                                        <rect key="frame" x="26" y="205" width="324" height="46"/>
+                                        <color key="backgroundColor" red="0.0" green="0.5" blue="0.89589843749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="FyN-RA-ks1"/>
+                                            <constraint firstAttribute="width" constant="324" id="nGE-Pa-Xif"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Like Us on Facebook">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fbLikeBtnPressed:" destination="ot1-f8-7GU" eventType="touchUpInside" id="9Eh-Ip-bHJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztN-Du-Ay5">
+                                        <rect key="frame" x="26" y="129" width="324" height="46"/>
+                                        <color key="backgroundColor" red="0.4431372549" green="0.84705882349999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="36n-sC-2BF"/>
+                                            <constraint firstAttribute="width" constant="324" id="kDj-p7-LsI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Like Us on Twitter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DY-bW-Wmi">
+                                        <rect key="frame" x="26" y="53" width="324" height="46"/>
+                                        <color key="backgroundColor" red="1" green="0.49803921569999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="324" id="JPY-uQ-Rgr"/>
+                                            <constraint firstAttribute="height" constant="46" id="y4b-2F-POG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Send Feedbacks">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="feedBacksBtnPressed:" destination="ot1-f8-7GU" eventType="touchUpInside" id="tmQ-3W-SY1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23529411764705882" green="0.30588235294117649" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="JOJ-8J-leC" firstAttribute="centerY" secondItem="G3M-zW-f0l" secondAttribute="centerY" id="9CY-Ui-Vtn"/>
+                                    <constraint firstItem="ztN-Du-Ay5" firstAttribute="top" secondItem="3DY-bW-Wmi" secondAttribute="bottom" constant="30" id="M6L-II-5Wq"/>
+                                    <constraint firstItem="bfv-8R-3AR" firstAttribute="trailing" secondItem="JOJ-8J-leC" secondAttribute="trailing" id="O6x-fo-Non"/>
+                                    <constraint firstItem="bfv-8R-3AR" firstAttribute="leading" secondItem="JOJ-8J-leC" secondAttribute="leading" id="RmJ-7O-bZ4"/>
+                                    <constraint firstItem="3DY-bW-Wmi" firstAttribute="trailing" secondItem="ztN-Du-Ay5" secondAttribute="trailing" id="WLx-ub-uGH"/>
+                                    <constraint firstItem="3DY-bW-Wmi" firstAttribute="leading" secondItem="ztN-Du-Ay5" secondAttribute="leading" id="Yeo-WU-e9m"/>
                                     <constraint firstItem="JOJ-8J-leC" firstAttribute="centerX" secondItem="G3M-zW-f0l" secondAttribute="centerX" id="hc2-kF-04L"/>
+                                    <constraint firstItem="ztN-Du-Ay5" firstAttribute="trailing" secondItem="bfv-8R-3AR" secondAttribute="trailing" id="lj1-Dq-EMz"/>
+                                    <constraint firstItem="bfv-8R-3AR" firstAttribute="top" secondItem="ztN-Du-Ay5" secondAttribute="bottom" constant="30" id="nDX-8f-2N1"/>
+                                    <constraint firstItem="ztN-Du-Ay5" firstAttribute="leading" secondItem="bfv-8R-3AR" secondAttribute="leading" id="oqe-Oz-j6w"/>
+                                    <constraint firstItem="JOJ-8J-leC" firstAttribute="top" secondItem="bfv-8R-3AR" secondAttribute="bottom" constant="35" id="xKq-CS-3Aa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1524,7 +1602,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G95-Vh-QB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2801" y="53"/>
+            <point key="canvasLocation" x="2800.8000000000002" y="52.623688155922046"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="9QD-yU-dnY">
@@ -1587,7 +1665,7 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lee Kwang Soo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-af-pp4">
-                                        <rect key="frame" x="56" y="13" width="124" height="24"/>
+                                        <rect key="frame" x="56" y="13.5" width="124" height="23.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1685,6 +1763,7 @@
         <image name="Line" width="352" height="1"/>
         <image name="Or divider" width="270" height="13"/>
         <image name="Pin" width="26" height="28"/>
+        <image name="acceptBtn" width="98" height="32"/>
         <image name="acceptButton" width="98" height="32"/>
         <image name="attendance" width="15" height="15"/>
         <image name="basketballcourt" width="6038" height="2650"/>
@@ -1706,10 +1785,10 @@
         <image name="users" width="48" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9Oh-Ha-lxQ"/>
+        <segue reference="8Xx-qg-b1Y"/>
         <segue reference="XxB-Vf-b1n"/>
-        <segue reference="l78-EU-e0l"/>
-        <segue reference="BZ4-gu-jLC"/>
-        <segue reference="alj-gy-RSH"/>
-        <segue reference="XKq-jl-Qbj"/>
+        <segue reference="Jbw-cF-9Ox"/>
+        <segue reference="DeB-JS-qfJ"/>
     </inferredMetricsTieBreakers>
 </document>

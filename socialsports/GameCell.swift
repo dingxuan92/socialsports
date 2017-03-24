@@ -91,7 +91,6 @@ class GameCell: UITableViewCell {
                     let distanceInMeters = userCoordinates.distance(from: gameCoordinates) / 1000
                     let distanceInOneDecimal = round(distanceInMeters * 10) / 10
                     self.distanceLbl.text = "\(distanceInOneDecimal) km"
-
                 }
             }
         })
@@ -103,6 +102,10 @@ class GameCell: UITableViewCell {
                     self.timeLbl.text = "\(date), \(time)"
                 }
             }
+            let count = snapshot.childSnapshot(forPath: "attending").childrenCount
+            let max = snapshot.childSnapshot(forPath: "maxppl").value
+            self.numPlayersLbl.text = "\(count) / \(max!)"
+            
         })
         
     

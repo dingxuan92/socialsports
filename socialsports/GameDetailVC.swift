@@ -12,7 +12,7 @@ import SwiftDate
 import SwiftKeychainWrapper
 
 class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
-
+    
     var selectedGame: Game!
     
     @IBOutlet weak var gameTitle: UILabel!
@@ -29,6 +29,7 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var chatSendImage: UIImageView!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var deleteGameBtn: UIButton!
+    @IBOutlet weak var acceptBtn: UIImageView!
     
     
     var profiles = [Profile]()
@@ -50,11 +51,12 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
-
+        
         updateMainUI()
         observeProfile()
         observeChat()
         checkIfCreator()
+    
     }
     
     deinit {
@@ -79,16 +81,16 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let chat = chats[indexPath.row]
+        let chat = chats[indexPath.row]
+        
+        if let cell = chatTableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as? ChatCell {
             
-            if let cell = chatTableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as? ChatCell {
-                
-                cell.configureCell(chat: chat)
-                return cell
-                
-            } else {
-                return ChatCell()
-            }
+            cell.configureCell(chat: chat)
+            return cell
+            
+        } else {
+            return ChatCell()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -98,7 +100,7 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
             
             cell.configureCell(profile: profile)
             return cell
-    
+            
         } else {
             return DetailProfCell()
         }
@@ -184,7 +186,7 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         self.view.endEditing(true)
         return false
     }
-
+    
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -266,9 +268,41 @@ class GameDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
             if let creatorID = snapshot.childSnapshot(forPath: "creator").value as? String {
                 if creatorID == uid {
                     self.editLbl.isHidden = false
+                } else {
+                        self.acceptBtn.isHidden = false
+                        DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").child(self.selectedGame.gameKey).observeSingleEvent(of: .value, with: { (snapshot) in
+                            if let _ = snapshot.value as? NSNull {
+                                self.acceptBtn.image = UIImage(named: "acceptBtn")
+                            } else {
+                                self.acceptBtn.image = UIImage(named: "goingBtn")
+                            }
+                        })
                 }
             }
             
         })
     }
+    
+    @IBAction func acceptBtnTapped(_ sender: Any) {
+        let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
+        
+        DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").child(selectedGame.gameKey).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                
+                self.acceptBtn.image = UIImage(named: "goingBtn")
+                
+                DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").child(self.selectedGame.gameKey).setValue(true)
+                DataService.ds.REF_GAMES.child(self.selectedGame.gameKey).child("attending").child(uid!).setValue(true)
+            } else {
+                
+                self.acceptBtn.image = UIImage(named: "acceptBtn")
+                
+                DataService.ds.REF_USERS_CURRENT.child("gamesAccepted").child(self.selectedGame.gameKey).removeValue()
+                DataService.ds.REF_GAMES.child(self.selectedGame.gameKey).child("attending").child(uid!).removeValue()
+            }
+            
+        })
+    }
+    
+    
 }
