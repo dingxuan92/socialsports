@@ -107,9 +107,7 @@ class GameCell: UITableViewCell {
             self.numPlayersLbl.text = "\(count) / \(max!)"
             
         })
-        
     
-        
         self.titleLbl.text = game.title
         self.likesLbl.text = "\(game.likes)"
         self.numPlayersLbl.text = "\(game.attendance) / \(game.maxppl)"
@@ -183,9 +181,6 @@ class GameCell: UITableViewCell {
             }
         })
     }
-    
-    
-    
 }
 
 

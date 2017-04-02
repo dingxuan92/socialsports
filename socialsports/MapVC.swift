@@ -131,7 +131,7 @@ class MapVC: UIViewController,MKMapViewDelegate, CLLocationManagerDelegate {
         
         _ = circleQuery?.observe(GFEventType.keyEntered, with: { (key, location) in
             
-            //Also, as when the app loads for the first time, the this will run and cycle through every single pokemon on the map, with its specific geographic location and going to add it as annotation
+            //Also, as when the app loads for the first time, the this will run and cycle through every single annotation on the map, with its specific geographic location and going to add it as annotation
             
             if let key = key, let location = location {
                 
