@@ -52,7 +52,7 @@ class ChatCell: UITableViewCell {
             if let img = value?["profileURL"] as? String {
                 if let imgURL = NSURL(string: img) {
                     let data = NSData(contentsOf: imgURL as URL)
-                    self.profileImg.image = UIImage(data: data as! Data)
+                    self.profileImg.image = UIImage(data: data! as Data)
                 }
             }
         })

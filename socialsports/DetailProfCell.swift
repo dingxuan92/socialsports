@@ -30,7 +30,7 @@ class DetailProfCell: UICollectionViewCell {
             if let img = value?["profileURL"] as? String {
                 if let imgURL = NSURL(string: img) {
                     let data = NSData(contentsOf: imgURL as URL)
-                    self.profImg.image = UIImage(data: data as! Data)
+                    self.profImg.image = UIImage(data: data! as Data)
                 }
             }
         })

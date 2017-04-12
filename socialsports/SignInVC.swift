@@ -47,7 +47,7 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
                 
-                print("Ding: Unable to authenticate with Facebook - \(error)")
+                print("Ding: Unable to authenticate with Facebook - \(String(describing: error))")
                 
             } else if result?.isCancelled == true {
                 self.actInd.stopAnimating()
@@ -68,7 +68,7 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if error != nil {
-                print("Ding: Unable to authenticate with Firebase - \(error)")
+                print("Ding: Unable to authenticate with Firebase - \(String(describing: error))")
             } else {
                 print("Ding: Successfully authenticated with Firebase")
                 if let user = user {

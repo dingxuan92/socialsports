@@ -185,7 +185,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     if let user = FIRAuth.auth()?.currentUser {
                         if let photoURL = user.photoURL {
                             let data = NSData(contentsOf: photoURL)
-                            self.profileImage.image = UIImage(data: data as! Data)
+                            self.profileImage.image = UIImage(data: data! as Data)
                         }
                         if let name = user.displayName {
                             self.profileName.text = name

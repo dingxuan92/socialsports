@@ -43,7 +43,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         if let user = FIRAuth.auth()?.currentUser {
             if let photoURL = user.photoURL {
                 let data = NSData(contentsOf: photoURL)
-                profileImg.image = UIImage(data: data as! Data)
+                profileImg.image = UIImage(data: data! as Data)
             }
             if let name = user.displayName {
                 userName.text = name
