@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>953380739611-2b88fsu18jg7vh3e5net90lv7oo6msnh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.953380739611-2b88fsu18jg7vh3e5net90lv7oo6msnh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAnFwz-Cqp8CEX9RDUdoLAHtCvI2bSxX38</string>
+	<key>GCM_SENDER_ID</key>
+	<string>953380739611</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dingxuan.socialsports</string>
+	<key>PROJECT_ID</key>
+	<string>socialsports-9233f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>socialsports-9233f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:953380739611:ios:7bdbb9612548cfcf</string>
+	<key>DATABASE_URL</key>
+	<string>https://socialsports-9233f.firebaseio.com</string>
+</dict>
+</plist>
